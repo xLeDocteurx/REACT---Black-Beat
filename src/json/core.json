@@ -1,0 +1,108 @@
+{
+    "samplePacks": [
+        {
+            "id": 0,
+            "name": "Satin Charley",
+            "samples": [
+                {
+                    "id": 0,
+                    "name": "kick1",
+                    "playMode": "restart",
+                    "fromStart": true,
+                    "volume": 1.0,
+                    "path": "./factory_samples/mad_zack/Satin_Charly/kick1.wav"
+                },
+                {
+                    "id": 1,
+                    "name": "kick2",
+                    "playMode": "restart",
+                    "fromStart": true,
+                    "volume": 1.0,
+                    "path": "./factory_samples/mad_zack/Satin_Charly/kick2.wav"
+                },
+                {
+                    "id": 2,
+                    "name": "snare",
+                    "playMode": "restart",
+                    "fromStart": true,
+                    "volume": 1.0,
+                    "path": "./factory_samples/mad_zack/Satin_Charly/snare.wav"
+                },
+                {
+                    "id": 3,
+                    "name": "clap",
+                    "playMode": "restart",
+                    "fromStart": true,
+                    "volume": 1.0,
+                    "path": "./factory_samples/mad_zack/Satin_Charly/clap.wav"
+                },
+                {
+                    "id": 4,
+                    "name": "HH-C",
+                    "playMode": "restart",
+                    "fromStart": true,
+                    "volume": 1.0,
+                    "path": "./factory_samples/mad_zack/Satin_Charly/hhc.wav"
+                },
+                {
+                    "id": 5,
+                    "name": "vox hit",
+                    "playMode": "restart",
+                    "fromStart": true,
+                    "volume": 1.0,
+                    "path": "./factory_samples/mad_zack/Satin_Charly/00_voxhit.wav"
+                },
+                {
+                    "id": 6,
+                    "name": "chorus 1",
+                    "playMode": "restart",
+                    "fromStart": true,
+                    "volume": 1.0,
+                    "path": "./factory_samples/mad_zack/Satin_Charly/chorus1.wav"
+                },
+                {
+                    "id": 7,
+                    "name": "chorus 2",
+                    "playMode": "restart",
+                    "fromStart": true,
+                    "volume": 1.0,
+                    "path": "./factory_samples/mad_zack/Satin_Charly/chorus2.wav"
+                },
+                {
+                    "id": 8,
+                    "name": "trumper 1",
+                    "playMode": "restart",
+                    "fromStart": true,
+                    "volume": 1.0,
+                    "path": "./factory_samples/mad_zack/Satin_Charly/trumpet1.wav"
+                },
+                {
+                    "id": 9,
+                    "name": "trumpet 2",
+                    "playMode": "restart",
+                    "fromStart": true,
+                    "volume": 1.0,
+                    "path": "./factory_samples/mad_zack/Satin_Charly/trumpet2.wav"
+                },
+                {
+                    "id": 10,
+                    "name": "trumpet 3",
+                    "playMode": "restart",
+                    "fromStart": true,
+                    "volume": 1.0,
+                    "path": "./factory_samples/mad_zack/Satin_Charly/trumpet3.wav"
+                }
+            ]
+        }
+    ],
+    "songs": [
+        {
+            "id": 0,
+            "name":"It's a new day - Skull Snaps",
+            "playMode": "restart",
+            "fromStart": true,
+            "volume": 1.0,
+            "path": "./songs/skull-snaps-its-a-new-day-1973.mp3"
+        }
+    ]
+}

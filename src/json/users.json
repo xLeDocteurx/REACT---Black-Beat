@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "username": "LeDocteur",
+      "email": "lenoirc.fr@gmail.com",
+      "password": "0000",
+      "currentProject": 0,
+      "bio": "",
+      "avatar": ""
+    },
+    {
+      "id": 1,
+      "username": "Bouba",
+      "email": "bouba@gmail.com",
+      "password": "0000",
+      "currentProject": 0,
+      "bio": "",
+      "avatar": ""
+    }
+  ]
+}
