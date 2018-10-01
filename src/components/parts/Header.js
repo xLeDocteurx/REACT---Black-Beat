@@ -79,6 +79,9 @@ export default class MenuExampleHeader extends Component {
             </Menu.Item> */}
 
             <Menu.Item
+            as="a"
+            href="#"
+            // onClick=""
             position="right">
                 <Image src="./autop.jpg" alt="Company Logo" avatar />
                 <span>Username</span>

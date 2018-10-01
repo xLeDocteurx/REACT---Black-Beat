@@ -21,7 +21,6 @@ class LoadModal extends Modal {
     
     render () {
 
-
         return (
 
             <Modal trigger={<Dropdown.Item>Load</Dropdown.Item>}>
@@ -40,6 +39,7 @@ class LoadModal extends Modal {
                                 // as='a' 
                                 // href='http://google.com' 
                                 // target='_BLANK'
+                                // onClick={loadProject}
                                 >
                                     <List.Icon name='github' size='larges' verticalAlign='middle' />
                                     <List.Content>

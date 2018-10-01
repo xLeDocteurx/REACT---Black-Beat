@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import { Container } from 'semantic-ui-react';
-
-// Les classes
-// import DB from './classes/DB.js';
-// Les parts de  l'application
-import Header from './components/parts/Header';
-
-import firebase from 'firebase';
-
-
+import { Grid, Container, Segments, Segment } from 'semantic-ui-react';
 
 // import logo from './logo.svg';
 import './App.css';
-import DB from './classes/DB';
+
+
+
+// Les parts de  l'application
+import Header from './components/parts/Header';
+
+
+
+import firebase from 'firebase';
+import projects from "./json/projects.json";
+// import DB from './classes/DB';
+// let DB = require('./classes/DB.js');
 
 
 
@@ -41,7 +43,6 @@ import DB from './classes/DB';
 //       console.log('?????????????????');
 //     })
 // });
-import projects from "./json/projects.json";
 
 class App extends Component {
 
@@ -64,13 +65,44 @@ class App extends Component {
   // }
 
   render() {
+
+    // console.log(projects);
+    // console.table(projects);
     return (
       <div>
         {/* <DB/> */}
+        {/* {console.log(DB)} */}
         <Header 
         projects={this.state.projects} 
         currentProject={this.state.currentProject}
         />
+
+        {/* <Segments> */}
+        <Grid columns="equal">
+          <Grid.Row stretched>
+            <Grid.Column>
+              <Segment>
+                1
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment>
+                2
+              </Segment>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row>
+            <Grid.Column>
+              <Segment>
+                3
+              </Segment>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+
+        {/* </Segments> */}
+
         {/* <AddImageModal images={this.state.images}/>
         <Container>
           <Carousel images={this.state.images}/>

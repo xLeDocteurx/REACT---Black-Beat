@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
 
 // import core from "./../json/core.json";
 import projects from "./../json/projects.json";
@@ -59,7 +59,11 @@ export default class DB {
     }
         
     static loadProject (idProject) {
+        console.log(`Trying to load project : ${idProject}`);
+    }
 
+    static blbl(){
+        return "Hola";
     }
 
 }
