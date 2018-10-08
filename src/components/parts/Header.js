@@ -1,22 +1,33 @@
 import React, { Component } from "react";
 // import { Menu } from "semantic-ui-react";
-import { Image, Divider, Dropdown, Menu } from "semantic-ui-react";
+import { Image, Dropdown, Menu, 
+    // Divider
+    } from "semantic-ui-react";
 import NewModal from "../elements/NewModal";
 import LoadModal from "../elements/LoadModal";
 
+// import fs from "fs";
+// import DB from "../../classes/DB.js";
+
 export default class MenuExampleHeader extends Component {
 
-    state = {};
+    // state = {};
 
-    // constructor (props) {
-    //     super(props)
+    constructor (props) {
+        super(props)
 
-    //     this.state = {}
-    // }
+        this.state = {
+
+        }
+
+        this.saveProjects = this.saveProjects.bind(this);
+    }
     
-
-
     // handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
+    saveProjects = () => {
+
+    }
 
     render() {
         // const { activeItem } = this.state;
@@ -31,7 +42,9 @@ export default class MenuExampleHeader extends Component {
                     <NewModal />
                     <Dropdown.Item 
                         // as='button'
-                        // onClick={DB.saveProjects()}
+                        // href="#"
+                        // onClick={DB.saveProjects}
+                        onClick={this.saveProjects}
                     >Save</Dropdown.Item>
 
                     <LoadModal projects={this.props.projects}/>
@@ -73,18 +86,18 @@ export default class MenuExampleHeader extends Component {
             onClick={this.handleItemClick}
             />
 
-            {/* <Menu.Item 
+            <Menu.Item 
             // className="centered" 
-                header>Current Project : {this.props.currentProject.title}
-            </Menu.Item> */}
+                header>{this.props.currentProject.title}
+            </Menu.Item>
 
             <Menu.Item
             as="a"
             href="#"
             // onClick=""
             position="right">
-                <Image src="./autop.jpg" alt="Company Logo" avatar />
-                <span>Username</span>
+                <Image src={this.props.currentUser.avatar} alt="User Avatar" avatar />
+                <span>{this.props.currentUser.username}</span>
             </Menu.Item>
         </Menu>
         );

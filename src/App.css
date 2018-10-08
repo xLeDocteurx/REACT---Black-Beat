@@ -1,3 +1,29 @@
+.no-pm {
+
+  margin: 0px;
+  padding: 0px;
+}
+
+.no-m {
+  margin: 0px;
+}
+
+.no-p {
+  padding: 0px;
+}
+
+#segment1 {
+  
+}
+
+#segment2 {
+  
+}
+
+#segment3 {
+
+}
+
 .App {
   text-align: center;
 }

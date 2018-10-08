@@ -1,8 +1,8 @@
 // import React, { Component } from "react";
 
-// import core from "./../json/core.json";
+import core from "./../json/core.json";
 import projects from "./../json/projects.json";
-// import users from "./../json/users.json";
+import users from "./../json/users.json";
 
 const fs = require('fs');
 
@@ -29,10 +29,20 @@ const fs = require('fs');
 
 export default class DB {
 
-    projects = projects.projects;
+    projects;
 
-    getProjects () {
-        return(this.projects);
+    constructor() {
+        this.projects = projects.projects;
+    }
+
+    static getProjects () {
+        console.log(this.projects);
+        console.log(projects.projects);
+        // return(projects.projects);
+    }
+
+    static addProject (newProject) {
+        let newProjects = [...this.projects, newProject];
     }
     
     // state = {};
@@ -54,8 +64,8 @@ export default class DB {
         // });
     }
     
-    static saveProject (idProject) {
-        console.log(`Trying to save the current project : ${idProject}`);
+    static saveProject () {
+        console.log(`Trying to save the current project`);
     }
         
     static loadProject (idProject) {

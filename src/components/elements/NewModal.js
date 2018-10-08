@@ -1,5 +1,8 @@
 import React from 'react'
-import { Menu, Dropdown, Button, Checkbox, Form, Header, Image, Modal } from 'semantic-ui-react'
+import { 
+    Dropdown, Button, 
+    // Menu, Checkbox, Header, Image, 
+    Form, Modal } from 'semantic-ui-react'
 
 // import DB from '../../classes/DB.js';
 // let DB = require('../../classes/DB.js');

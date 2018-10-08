@@ -1,7 +1,7 @@
 import React from 'react'
-import { Menu, List, Dropdown, Button, Checkbox, Form, Header, Image, Modal } from 'semantic-ui-react'
-
-import projects from '../../json/projects.json'
+import { 
+    // Menu, Button, Checkbox, Form, Header, Image, 
+    List, Dropdown, Modal } from 'semantic-ui-react'
 
 // import DB from '../../classes/DB.js';
 // let DB = require('../../classes/DB.js');
@@ -45,7 +45,7 @@ class LoadModal extends Modal {
                                     <List.Content>
                                         <List.Header 
                                             // as='a'
-                                        >{ project.id } // { project.title }</List.Header>
+                                        >{ project.id } !! { project.title }</List.Header>
                                         <List.Description 
                                             // as='a'
                                         >{ project.owner }</List.Description>
