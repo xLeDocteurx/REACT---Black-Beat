@@ -42,18 +42,37 @@ export default class MenuExampleHeader extends Component {
                 <Dropdown.Menu>
                     
                     <NewModal />
+
+                    <LoadModal projects={this.props.projects}/>
+
                     <Dropdown.Item 
                         // as='button'
                         // href="#"
-                        // onClick={DB.saveProjects}
-                        onClick={this.saveProjects}
-                    >Save</Dropdown.Item>
+                        text='Save'
+                        description='ctrl + s' 
+                        icon='save'
+                        // onClick={this.saveProjects}
+                    />
 
-                    <LoadModal projects={this.props.projects}/>
-                    {/* <Dropdown.Item>Load</Dropdown.Item> */}
+                    <Dropdown.Item 
+                        // as='button'
+                        // href="#"
+                        text='Delete'
+                        // description='ctrl + s' 
+                        icon='trash'
+                        // onClick={this.saveProjects}
+                    />
+
                     <Dropdown.Divider />
                     <Dropdown.Header>Export</Dropdown.Header>
-                    <Dropdown.Item>Share</Dropdown.Item>
+                    <Dropdown.Item
+                        // as='button'
+                        // href="#"
+                        text='Share'
+                        // description='ctrl + s' 
+                        icon='share'
+                        // onClick={this.saveProjects}
+                    />
                 </Dropdown.Menu>
             </Dropdown>
 

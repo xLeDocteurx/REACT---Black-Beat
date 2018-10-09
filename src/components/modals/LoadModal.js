@@ -24,7 +24,11 @@ class LoadModal extends Modal {
 
         return (
 
-            <Modal trigger={<Dropdown.Item>Load</Dropdown.Item>}>
+            <Modal trigger={<Dropdown.Item
+                text='Load'
+                // description='ctrl + l' 
+                icon='folder open'
+            />}>
             {/* <Modal trigger={<MyCards key={this.props.element.id} element={this.props.element}/>}> */}
                 <Modal.Header>Load a project</Modal.Header>
                 {/* <Modal.Content image> */}

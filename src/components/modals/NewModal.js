@@ -32,7 +32,11 @@ class NewModal extends Modal {
 
         return (
 
-            <Modal trigger={<Dropdown.Item>New</Dropdown.Item>}>
+            <Modal trigger={<Dropdown.Item
+                text='New'
+                // description='ctrl + n' 
+                icon='file'
+            />}>
             {/* <Modal trigger={<MyCards key={this.props.element.id} element={this.props.element}/>}> */}
                 <Modal.Header>Create a new project</Modal.Header>
                 {/* <Modal.Content image> */}
