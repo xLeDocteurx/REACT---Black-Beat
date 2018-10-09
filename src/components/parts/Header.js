@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-// import { Menu } from "semantic-ui-react";
 import { Image, Dropdown, Menu, 
     // Divider
     } from "semantic-ui-react";
+
 import NewModal from "../elements/NewModal";
 import LoadModal from "../elements/LoadModal";
 
-// import fs from "fs";
-// import DB from "../../classes/DB.js";
+import './Header.css';
 
 export default class MenuExampleHeader extends Component {
 
@@ -20,14 +19,17 @@ export default class MenuExampleHeader extends Component {
 
         }
 
-        this.saveProjects = this.saveProjects.bind(this);
     }
     
     // handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
-    saveProjects = () => {
+    // handleSubmit = () => {
+    //     const { title, about } = this.state
 
-    }
+    //     this.setState({ submittedTitle: title, submittedAbout: about })
+
+    //     // DB.newProject();
+    // }
 
     render() {
         // const { activeItem } = this.state;

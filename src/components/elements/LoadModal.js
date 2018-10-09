@@ -3,9 +3,6 @@ import {
     // Menu, Button, Checkbox, Form, Header, Image, 
     List, Dropdown, Modal } from 'semantic-ui-react'
 
-// import DB from '../../classes/DB.js';
-// let DB = require('../../classes/DB.js');
-
 class LoadModal extends Modal {
 
     state = {}
@@ -18,6 +15,10 @@ class LoadModal extends Modal {
     //         projects: projects.projects,
     //     }
     // }
+
+    loadProject = (id) => {
+        console.log(`Trying to save a project ${id}`);
+    }
     
     render () {
 
@@ -34,14 +35,15 @@ class LoadModal extends Modal {
                         <List selection divided relaxed>
 
                             {this.props.projects.map(project => (
-                                
+
+
                                 <List.Item key={project.id} 
                                 // as='a' 
                                 // href='http://google.com' 
                                 // target='_BLANK'
-                                // onClick={loadProject}
+                                // onClick={this.loadProject(project.id)}
                                 >
-                                    <List.Icon name='github' size='larges' verticalAlign='middle' />
+                                    <List.Icon name='github' size='large' verticalAlign='middle' />
                                     <List.Content>
                                         <List.Header 
                                             // as='a'

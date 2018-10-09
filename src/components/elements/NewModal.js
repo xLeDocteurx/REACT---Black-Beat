@@ -4,9 +4,6 @@ import {
     // Menu, Checkbox, Header, Image, 
     Form, Modal } from 'semantic-ui-react'
 
-// import DB from '../../classes/DB.js';
-// let DB = require('../../classes/DB.js');
-
 class NewModal extends Modal {
     
     // state = { title: '', about: '' }

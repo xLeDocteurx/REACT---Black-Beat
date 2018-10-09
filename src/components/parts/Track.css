@@ -1,0 +1,33 @@
+.track {
+width: 190px;
+/* min-width: 130px; */
+/* max-width: 130px; */
+}
+
+#tracks-container {
+/* height: 300px;
+overflow-y: auto; */
+}
+
+#nav-tabContent {
+height: 200px;
+overflow-y: scroll;
+}
+
+.sample-name {
+width: 100px;
+}
+
+.vu-meter-yellow {
+/* display: inline-block; */
+height: 10px;
+width: 15px;
+/* background-color: #FCE205; */
+}
+
+.vu-meter-green {
+display: inline-block;
+height: 80px;
+width: 15px;
+/* background-color: #FCE205; */
+}
