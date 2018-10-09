@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { 
     // ImageImage, Dropdown, Menu, 
     // Divider
-    Segment,
+    Segment, Progress,
     } from 'semantic-ui-react'
 
 import Clip from './Clip.js'
@@ -40,15 +40,13 @@ export default class Track extends Component {
         return (
             <Segment.Group id="{ this.props.track.name }" 
                 // onclick="showTrack()" 
-                className="text-light bg-dark track p-1">
-                <Segment className="mb-1">
+                className="">
+                <Segment className="">
                     { this.props.track.name }
                 </Segment>
-                {/* <Segment className="progress mb-2">
-                    <div className="progress-bar progress-bar-striped bg-info" role="progressbar" 
-                    // style="width: 65%" 
-                    aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                </Segment> */}
+                <Segment className="">
+                    <Progress percent="40" indicating/>
+                </Segment>
 
                 <Segment.Group>{ allClips }</Segment.Group>
                 {/* { for (let i = this.props.track.length; i <= 12; i++) {
@@ -57,7 +55,7 @@ export default class Track extends Component {
             
                 Routing
                 <Segment className="">
-                    <select className="form-control form-control-sm" name="outputs">
+                    <select className="" name="outputs">
                         <option value="output" disabled selected>output :</option>
                         <option value="master">master</option>
                         <option value="buss_xx">buss_xx</option>

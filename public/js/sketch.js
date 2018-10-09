@@ -4,6 +4,7 @@ function preload() {
 
 function setup() {
   // put setup code here
+  noCanvas();
 }
 
 function draw() {

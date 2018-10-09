@@ -70,7 +70,9 @@ class App extends Component {
   render() {
     
     const allTracks = this.state.currentProject.tracks.map((track, track_index) => (
-      <List.Item><Track key={track_index} track={track}/></List.Item>
+      <List.Item>
+          <Track key={track_index} track={track}/>
+      </List.Item>
     ))
 
     console.log(this.state.currentUser);
@@ -94,7 +96,7 @@ class App extends Component {
 
             </div>
 
-            <div className="">
+            <div id="sends-container" className="">
               2
               {/* <%- include('../../elements/master') %>
               <%- include('../../elements/return-reverb') %>
