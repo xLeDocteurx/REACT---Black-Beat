@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-// import { Grid, Container, Segments, Segment } from 'semantic-ui-react';
+import { 
+  List,
+  // Grid, Container, Segments, Segment 
+} from 'semantic-ui-react';
 
 // import logo from './logo.svg';
 import './App.css';
@@ -67,7 +70,7 @@ class App extends Component {
   render() {
     
     const allTracks = this.state.currentProject.tracks.map((track, track_index) => (
-      <Track key={track_index} track={track}/>
+      <List.Item><Track key={track_index} track={track}/></List.Item>
     ))
 
     console.log(this.state.currentUser);
@@ -85,7 +88,9 @@ class App extends Component {
 
             <div id="tracks-container" className="">
             
-              {allTracks}
+              <List horizontal>
+                  {allTracks}
+              </List>
 
             </div>
 

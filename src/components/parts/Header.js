@@ -3,8 +3,8 @@ import { Image, Dropdown, Menu,
     // Divider
     } from "semantic-ui-react";
 
-import NewModal from "../elements/NewModal";
-import LoadModal from "../elements/LoadModal";
+import NewModal from "../modals/NewModal";
+import LoadModal from "../modals/LoadModal";
 
 import './Header.css';
 
