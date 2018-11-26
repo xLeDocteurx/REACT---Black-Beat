@@ -1,0 +1,366 @@
+{
+  "samplePacks": [
+    {
+      "id": 0,
+      "name": "Satin Charley",
+      "samples": [
+        {
+          "id": 0,
+          "name": "kick1",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/Satin_Charly/kick2.wav"
+        },
+        {
+          "id": 1,
+          "name": "kick2",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/Satin_Charly/kick2.wav"
+        },
+        {
+          "id": 2,
+          "name": "snare",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/Satin_Charly/snare.wav"
+        },
+        {
+          "id": 3,
+          "name": "clap",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/Satin_Charly/clap.wav"
+        },
+        {
+          "id": 4,
+          "name": "HH-C",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/Satin_Charly/hhc.wav"
+        },
+        {
+          "id": 5,
+          "name": "vox hit",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/Satin_Charly/00_voxhit.wav"
+        },
+        {
+          "id": 6,
+          "name": "chorus 1",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/Satin_Charly/chorus1.wav"
+        },
+        {
+          "id": 7,
+          "name": "chorus 2",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/Satin_Charly/chorus2.wav"
+        },
+        {
+          "id": 8,
+          "name": "trumper 1",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/Satin_Charly/trumpet1.wav"
+        },
+        {
+          "id": 9,
+          "name": "trumpet 2",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/Satin_Charly/trumpet2.wav"
+        },
+        {
+          "id": 10,
+          "name": "trumpet 3",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/Satin_Charly/trumpet3.wav"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Bling It On",
+      "samples": [
+        {
+          "id": 0,
+          "name": "kick1",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/bling_it_on/0.wav"
+        },
+        {
+          "id": 1,
+          "name": "kick2",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/bling_it_on/01.wav"
+        },
+        {
+          "id": 2,
+          "name": "snare",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/bling_it_on/02.wav"
+        },
+        {
+          "id": 3,
+          "name": "clap",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/bling_it_on/03.wav"
+        },
+        {
+          "id": 4,
+          "name": "HH-C",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/bling_it_on/03.wav"
+        },
+        {
+          "id": 5,
+          "name": "vox hit",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/bling_it_on/03.wav"
+        },
+        {
+          "id": 6,
+          "name": "chorus 1",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/bling_it_on/06.wav"
+        },
+        {
+          "id": 7,
+          "name": "chorus 2",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/bling_it_on/07.wav"
+        },
+        {
+          "id": 8,
+          "name": "trumper 1",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/bling_it_on/08.wav"
+        },
+        {
+          "id": 9,
+          "name": "trumpet 2",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/bling_it_on/09.wav"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Next One",
+      "samples": [
+        {
+          "id": 0,
+          "name": "kick1",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/next_one/0.wav"
+        },
+        {
+          "id": 1,
+          "name": "kick2",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/next_one/01.wav"
+        },
+        {
+          "id": 2,
+          "name": "snare",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/next_one/02.wav"
+        },
+        {
+          "id": 3,
+          "name": "clap",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/next_one/03.wav"
+        },
+        {
+          "id": 4,
+          "name": "HH-C",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/next_one/04.wav"
+        },
+        {
+          "id": 5,
+          "name": "vox hit",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/next_one/03.wav"
+        },
+        {
+          "id": 6,
+          "name": "chorus 1",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/next_one/06.wav"
+        },
+        {
+          "id": 7,
+          "name": "chorus 2",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/next_one/07.wav"
+        },
+        {
+          "id": 8,
+          "name": "trumper 1",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/next_one/08.wav"
+        },
+        {
+          "id": 9,
+          "name": "trumpet 2",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/mad_zack/next_one/09.wav"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Weaked",
+      "samples": [
+        {
+          "id": 0,
+          "name": "kick1",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/wiked.aiff"
+        },
+        {
+          "id": 1,
+          "name": "kick2",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/jungleismassive.aiff"
+        },
+        {
+          "id": 2,
+          "name": "snare",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/ting.aiff"
+        },
+        {
+          "id": 3,
+          "name": "clap",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/jungleismassive.aiff"
+        },
+        {
+          "id": 4,
+          "name": "HH-C",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/yo.mp3"
+        },
+        {
+          "id": 5,
+          "name": "vox hit",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/200101.mp3"
+        },
+        {
+          "id": 6,
+          "name": "chorus 1",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/200102.mp3"
+        },
+        {
+          "id": 7,
+          "name": "chorus 2",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/200103.mp3"
+        },
+        {
+          "id": 8,
+          "name": "trumper 1",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/200104.mp3"
+        },
+        {
+          "id": 9,
+          "name": "trumpet 2",
+          "playMode": "restart",
+          "fromStart": true,
+          "volume": 1,
+          "path": "./factory_samples/yo.mp3"
+        }
+      ]
+    }
+  ],
+  "songs": [
+    {
+      "id": 0,
+      "name": "It's a new day - Skull Snaps",
+      "playMode": "restart",
+      "fromStart": true,
+      "volume": 1,
+      "path": "./songs/skull-snaps-its-a-new-day-1973.mp3"
+    }
+  ]
+}

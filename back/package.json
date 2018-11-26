@@ -1,0 +1,28 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "s": "node ./server.js",
+    "n": "sudo nodemon ./server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "ent": "^2.2.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.3.0",
+    "moment": "^2.22.2",
+    "mysql2": "^1.6.4",
+    "node-forge": "^0.7.6",
+    "sequelize": "^4.41.1",
+    "sequelize-cli": "^5.3.0"
+  }
+}

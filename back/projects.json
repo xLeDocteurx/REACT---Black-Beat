@@ -1,0 +1,276 @@
+{
+  "projects": [
+    {
+      "id": 0,
+      "owner": "lenoirc.fr@gmail.com",
+      "colaborators": [],
+      "title": "Satin Charley",
+      "tracks": [
+        {
+          "id": 0,
+          "name": "Drum Rack",
+          "type": "Drum Rack",
+          "clips": [
+            {
+              "id": 0,
+              "name": "clip_00",
+              "steps": [
+                [1],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [2],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [1],
+                [],
+                [],
+                [],
+                [1],
+                [],
+                [],
+                [],
+                [2],
+                [],
+                [1],
+                [],
+                [],
+                [],
+                [5],
+                []
+              ]
+            },
+            { "id": 1, "name": "clip_01", "steps": [] },
+            { "id": 2, "name": "clip_02", "steps": [] },
+            { "id": 3, "name": "clip_03", "steps": [] }
+          ],
+          "currentClip": 0,
+          "samplePack": 0,
+          "channels": [],
+          "midi_effects": [],
+          "audio_clips": [],
+          "audio_effects": []
+        },
+        {
+          "id": 1,
+          "name": "MIDI Track",
+          "type": "MIDI Track",
+          "clips": [],
+          "currentClip": 0,
+          "samplePack": 0,
+          "channels": [],
+          "midi_effects": [],
+          "audio_clips": [],
+          "audio_effects": []
+        },
+        {
+          "id": 3,
+          "name": "Audio Input",
+          "type": "Audio Input",
+          "clips": [],
+          "currentClip": 0,
+          "samplePack": 0,
+          "channels": [],
+          "midi_effects": [],
+          "audio_clips": [],
+          "audio_effects": []
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "owner": "lenoirc.fr@gmail.com",
+      "colaborators": [],
+      "title": "Bling It On",
+      "tracks": [
+        {
+          "id": 0,
+          "name": "Drum Rack",
+          "type": "Drum Rack",
+          "clips": [
+            {
+              "id": 0,
+              "name": "clip_00",
+              "steps": [
+                [1],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [2],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [1],
+                [],
+                [],
+                [],
+                [1],
+                [],
+                [],
+                [],
+                [2],
+                [],
+                [1],
+                [],
+                [],
+                [],
+                [5],
+                []
+              ]
+            },
+            { "id": 1, "name": "clip_01", "steps": [] },
+            { "id": 2, "name": "clip_02", "steps": [] },
+            { "id": 3, "name": "clip_03", "steps": [] }
+          ],
+          "currentClip": 0,
+          "samplePack": 1,
+          "channels": [],
+          "midi_effects": [],
+          "audio_clips": [],
+          "audio_effects": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "owner": "lenoirc.fr@gmail.com",
+      "colaborators": [],
+      "title": "Next One",
+      "tracks": [
+        {
+          "id": 2,
+          "name": "Drum Rack",
+          "type": "Drum Rack",
+          "clips": [
+            {
+              "id": 0,
+              "name": "clip_00",
+              "steps": [
+                [1],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [2],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [1],
+                [],
+                [],
+                [],
+                [1],
+                [],
+                [],
+                [],
+                [2],
+                [],
+                [1],
+                [],
+                [],
+                [],
+                [5],
+                []
+              ]
+            },
+            { "id": 1, "name": "clip_01", "steps": [] },
+            { "id": 2, "name": "clip_02", "steps": [] },
+            { "id": 3, "name": "clip_03", "steps": [] }
+          ],
+          "currentClip": 0,
+          "samplePack": 2,
+          "channels": [],
+          "midi_effects": [],
+          "audio_clips": [],
+          "audio_effects": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "owner": "lenoirc.fr@gmail.com",
+      "colaborators": [],
+      "title": "Weaked",
+      "tracks": [
+        {
+          "id": 2,
+          "name": "Drum Rack",
+          "type": "Drum Rack",
+          "clips": [
+            {
+              "id": 0,
+              "name": "clip_00",
+              "steps": [
+                [1],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [2],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [1],
+                [],
+                [],
+                [],
+                [1],
+                [],
+                [],
+                [],
+                [2],
+                [],
+                [1],
+                [],
+                [],
+                [],
+                [5],
+                []
+              ]
+            },
+            { "id": 1, "name": "clip_01", "steps": [] },
+            { "id": 2, "name": "clip_02", "steps": [] },
+            { "id": 3, "name": "clip_03", "steps": [] }
+          ],
+          "currentClip": 0,
+          "samplePack": 3,
+          "channels": [],
+          "midi_effects": [],
+          "audio_clips": [],
+          "audio_effects": []
+        }
+      ]
+    }
+  ]
+}

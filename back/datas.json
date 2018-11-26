@@ -1,0 +1,120 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "tags": [0, 1],
+      "region": 0,
+      "nom": "admin",
+      "prenom": "admin",
+      "mail": "admin@admin.com",
+      "password": "admin",
+      "role": 2,
+      "promotion": "Toulouse #1",
+      "promoted": false
+    },
+    {
+      "id": 1,
+      "tags": [1],
+      "region": 1,
+      "nom": "le",
+      "prenom": "docteur",
+      "mail": "ledocteur@ledocteur.com",
+      "password": "ledocteur",
+      "role": 0,
+      "promotion": "St Gaudens #1",
+      "promoted": false
+    },
+    {
+      "id": 2,
+      "tags": [2],
+      "region": 2,
+      "nom": "blanc",
+      "prenom": "michel",
+      "mail": "michel@michel.com",
+      "password": "michel",
+      "role": 0,
+      "promotion": "St Gaudens #2",
+      "promoted": false
+    },
+    {
+      "id": 3,
+      "tags": [2, 1],
+      "region": 0,
+      "nom": "demor",
+      "prenom": "vol",
+      "mail": "vol@vol.com",
+      "password": "vol",
+      "role": 0,
+      "promotion": "St Gaudens #2",
+      "promoted": false
+    },
+    {
+      "id": 4,
+      "tags": [0, 2],
+      "region": 1,
+      "nom": "lerouge",
+      "prenom": "djohn",
+      "mail": "djohn@djohn.com",
+      "password": "djohn",
+      "role": 0,
+      "promotion": "St Gaudens #2",
+      "promoted": false
+    },
+    {
+      "id": 5,
+      "tags": [0],
+      "region": 2,
+      "nom": "dorange",
+      "prenom": "jus",
+      "mail": "jus@jus.com",
+      "password": "jus",
+      "role": 0,
+      "promotion": "St Gaudens #2",
+      "promoted": true
+    }
+  ],
+  "annonces": [
+    {
+      "id": 0,
+      "tags": [0],
+      "region": 0,
+      "author": 0,
+      "title": "Initial annonce",
+      "content": "Lorem Ipsum Reactum",
+      "created_at": "01/14/2013",
+      "valid_until": "01/14/2019"
+    },
+    {
+      "id": 1,
+      "tags": [1, 2],
+      "region": 0,
+      "author": 1,
+      "title": "Second annonce",
+      "content": "Lorem Ipsum Vuejstum",
+      "created_at": "01/14/2013",
+      "valid_until": "01/14/2018"
+    }
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "React",
+      "Description": "Utilisateur confirmé ou non de React"
+    },
+    {
+      "id": 1,
+      "name": "Vue JS",
+      "Description": "Utilisateur confirmé ou non de Vue JS"
+    },
+    {
+      "id": 2,
+      "name": "Angular",
+      "Description": "Utilisateur confirmé ou non de Angular"
+    }
+  ],
+  "regions": [
+    { "id": 0, "post_code": 31, "name": "Midi Pyrénées" },
+    { "id": 1, "post_code": 34, "name": "Rhones Alpes" },
+    { "id": 2, "post_code": 35, "name": "Ille et vilaine" }
+  ]
+}
