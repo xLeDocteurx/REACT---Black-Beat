@@ -1,6 +1,6 @@
 'use strict';
 
-const sample_pack = require('./sample_pack');
+const sample_pack = require('./sample_pack.js');
 
 module.exports = (sequelize, DataTypes) => {
   const sample = sequelize.define('sample', {

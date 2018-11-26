@@ -31,13 +31,13 @@ app.use(cookieparser())
 app.use(express.static("public"))
 app.use(cors())
 
-const index = require('./routes/index')
+const index = require('./controllers/index')
 app.use('/', index)
 
-const users = require('./routes/users')
+const users = require('./controllers/users')
 app.use('/users', users)
 
-const auth = require('./routes/auth')
+const auth = require('./controllers/auth')
 app.use('/auth', auth)
 
 let core = require('./core.json')

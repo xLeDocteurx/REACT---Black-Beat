@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const sample_pack = sequelize.define('sample_pack', {
     name: DataTypes.STRING

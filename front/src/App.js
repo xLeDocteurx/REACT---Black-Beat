@@ -8,6 +8,8 @@ import {
 import './App.css';
 
 // Les parts de  l'application
+import Login_Form from './pages/login_form'
+
 import Header from './components/parts/Header';
 import Footer from './components/parts/Footer';
 import Track from './components/parts/Track';
@@ -90,24 +92,26 @@ class App extends Component {
 
             <div id="tracks-container" className="">
             
-              <List horizontal>
+              <Login_Form/>
+
+              {/* <List horizontal>
                   {allTracks}
-              </List>
+              </List> */}
 
             </div>
 
-            <div id="sends-container" className="">
-              2
+            {/* <div id="sends-container" className=""> */}
+              {/* 2 */}
               {/* <%- include('../../elements/master') %>
               <%- include('../../elements/return-reverb') %>
               <%- include('../../elements/return-delay') %> */}
-            </div>
+            {/* </div> */}
 
         </section>
 
-        <Footer
+        {/* <Footer
         currentProject={this.state.currentProject}
-        />
+        /> */}
         
       </div>
     );
