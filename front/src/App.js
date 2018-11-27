@@ -15,12 +15,12 @@ import Footer from './components/parts/Footer';
 import Track from './components/parts/Track';
 
 // import firebase from 'firebase';
-import core from "./json/core.json";
-import projects from "./json/projects.json";
-import users from "./json/users.json";
+import core from './json/core.json';
+import projects from './json/projects.json';
+import users from './json/users.json';
 
-// import { User, Project, Track } from "./Interfaces.ts";
-import Project from "./classes/Project.js";
+// import { User, Project, Track } from './Interfaces.ts';
+import Project from './classes/Project.js';
 
 class App extends Component {
 
