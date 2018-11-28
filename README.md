@@ -49,8 +49,10 @@ Evolving constantly, the Black-Beat project is meant to be upgraded to suit peop
 
 ### Server :
 * "npm run start:nodemon"
+
 Start the server using nodemon
 
 ### DB :
 * "npm run db:refresh"
+
 Drop database + Create database + Migrate db + Run seeds
