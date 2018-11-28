@@ -32,3 +32,23 @@ Project started in 2018 by Christopher Lenoir (https://github.com/xLeDocteurx/MV
 New technologies allowed huge progresses toward development of digital audio tools.
 The Black-Beat project aims to allow digital audio enthusiasts to manipulate sounds straight from their internet browsers.
 Evolving constantly, the Black-Beat project is meant to be upgraded to suit people needs and to work on every platforms.
+
+************
+# Installation
+
+### Front :
+* "npm i"
+* "npm run start"
+
+### Back :
+* "npm i"
+* "npm run db:install"
+* "npm run start"
+
+# Custom commands
+
+### DB :
+* "npm run start:nodemon"
+Start the server using nodemon
+* "npm run db:refresh"
+Drop database + Create database + Migrate db + Run seeds
