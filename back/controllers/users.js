@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         // include: [ models.Task ]
     })
         .then((users) => {
-            res.send(users)
+            res.json(users)
         })
         .catch((err) => {    
             console.log(err) 
@@ -25,8 +25,44 @@ router.get('/', (req, res) => {
 })
 
 // Voir les utilisateurs activés
+router.get('/actives', (req, res) => {
+
+    models.User.findAll({
+        // include: [ models.Task ]
+        where: {
+            active: true
+        }
+    })
+        .then((users) => {
+            res.json(users)
+        })
+        .catch((err) => {    
+            console.log(err) 
+            res.send(`
+                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
+            `)
+        })
+})
 
 // Voir les utilisateurs désactivés
+router.get('/disabled', (req, res) => {
+
+    models.User.findAll({
+        // include: [ models.Task ]
+        where: {
+            active: false
+        }
+    })
+        .then((users) => {
+            res.json(users)
+        })
+        .catch((err) => {    
+            console.log(err) 
+            res.send(`
+                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
+            `)
+        })
+})
 
 //OK
 // Voir UN utilisateur
@@ -44,7 +80,7 @@ router.get('/:user_id', (req, res) => {
                 user.getContributions().then(contributions => {
                     user.dataValues.contributions = contributions
 
-                    res.status(200).json(user)
+                    res.json(user)
                 })
             })
         })
@@ -67,7 +103,7 @@ router.get('/:user_id/projects', (req, res) => {
             if (!user) res.send(`This is the Black Beat API // YOU ARE NOT READING USER // ${user_id} // PROJECTS`)
 
             user.getProjects().then(projects => {
-                res.send(projects)
+                res.json(projects)
             })
         })
         .catch((err) => {    
@@ -100,7 +136,7 @@ router.post('/', (req, res) => {
                 user.save()
                     .then(() => {
                         // res.redirect('/users')
-                        res.send(user)
+                        res.json(user)
                     })
                     .catch((err) => {   
                         console.log(err) 

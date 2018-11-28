@@ -23,7 +23,19 @@ module.exports = {
       'createdAt': '2018-11-23 17:00:35',
       'updatedAt': '2018-11-23 17:00:35',
       'currentProjectId': 1
-    }], {});
+    },
+    {
+      active: false,
+      username: 'Toto',
+      email: 'toto@gmail.com',
+      password: 'toto',
+      avatar: './logo.png',
+      bio: 'Toto is hot and dangerous !',
+      'createdAt': '2018-11-23 17:00:35',
+      'updatedAt': '2018-11-23 17:00:35',
+      'currentProjectId': 1
+    }
+  ], {});
   },
 
   down: (queryInterface, Sequelize) => {
