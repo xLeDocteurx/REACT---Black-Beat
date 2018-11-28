@@ -39,6 +39,9 @@ app.use('/', index)
 const users = require('./controllers/users')
 app.use('/users', users)
 
+const projects = require('./controllers/projects')
+app.use('/projects', projects)
+
 const auth = require('./controllers/auth')
 app.use('/auth', auth)
 

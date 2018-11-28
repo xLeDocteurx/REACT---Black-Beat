@@ -24,6 +24,7 @@ router.get('/', (req, res) => {
         })
 })
 
+// OK
 // Voir les utilisateurs activés
 router.get('/actives', (req, res) => {
 
@@ -82,6 +83,18 @@ router.get('/:user_id', (req, res) => {
 
                     res.json(user)
                 })
+                .catch((err) => {    
+                    console.log(err)
+                    res.send(`
+                        This is the Black Beat API // SOMETHING WENT WRONG // ${err}
+                    `)
+                })
+            })
+            .catch((err) => {    
+                console.log(err)
+                res.send(`
+                    This is the Black Beat API // SOMETHING WENT WRONG // ${err}
+                `)
             })
         })
         .catch((err) => {    
