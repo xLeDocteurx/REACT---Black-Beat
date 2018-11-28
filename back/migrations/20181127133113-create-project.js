@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Projects', {
@@ -18,6 +19,10 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      authorId: {
+        allowNull: false,
+        type: Sequelize.INTEGER
       }
     });
   },

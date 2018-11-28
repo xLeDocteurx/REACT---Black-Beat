@@ -12,6 +12,13 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = function(models) {
     // models.User.belongsTo(models.Project, {as: 'currentProject'})
     // associations can be defined here
+    models.User.belongsTo(models.Project, {
+      as: 'currentProject'
+      // onDelete: "CASCADE"
+    });
+    models.User.hasMany(models.Project, {
+      foreignKey: 'authorId'
+    })
   }
   return User
 }

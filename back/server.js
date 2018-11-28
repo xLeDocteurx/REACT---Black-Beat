@@ -19,6 +19,8 @@ const fs = require('fs')
 const bodyParser = require('body-parser')
 const cookieparser = require('cookie-parser')
 
+// let sample_pack = require('../front/public/factory_samples/mad_zack/Satin_Charly')
+
 
 
 const app = express()

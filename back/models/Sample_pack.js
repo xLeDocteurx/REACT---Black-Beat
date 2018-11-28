@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-  const Sample_pack = sequelize.define('sample_pack', {
+  const Sample_pack = sequelize.define('Sample_pack', {
     name: DataTypes.STRING
   }, {});
   // sample_pack.belongsToMany(sample, {through: 'sample_sample_pack'});

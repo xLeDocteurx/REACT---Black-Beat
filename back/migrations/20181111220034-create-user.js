@@ -9,10 +9,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      active: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN
+      }
       username: {
         type: Sequelize.STRING
       },
       email: {
+        unique: true,
         type: Sequelize.STRING
       },
       password: {
@@ -31,6 +36,10 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      currentProjectId: {
+        allowNull: true,
+        type: Sequelize.INTEGER
       }
     });
   },
