@@ -12,8 +12,9 @@ module.exports = {
       active: {
         allowNull: false,
         type: Sequelize.BOOLEAN
-      }
+      },
       username: {
+        unique: true,
         type: Sequelize.STRING
       },
       email: {

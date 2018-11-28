@@ -40,7 +40,12 @@ router.get('/:user_id', (req, res) => {
             
             user.getProjects().then(projects => {
                 user.dataValues.projects = projects
-                res.status(200).json(user)
+
+                user.getContributions().then(contributions => {
+                    user.dataValues.contributions = contributions
+
+                    res.status(200).json(user)
+                })
             })
         })
         .catch((err) => {    

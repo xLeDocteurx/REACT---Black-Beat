@@ -1,4 +1,4 @@
-// 'use strict'
+'use strict'
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
@@ -15,9 +15,16 @@ module.exports = (sequelize, DataTypes) => {
     models.User.belongsTo(models.Project, {
       as: 'currentProject'
       // onDelete: "CASCADE"
-    });
+    })
     models.User.hasMany(models.Project, {
       foreignKey: 'authorId'
+    })
+
+    models.User.belongsToMany(models.Project, {
+      as: 'Contributions',
+      through: 'Contributors',
+      foreignKey: 'userId',
+      otherKey: 'projectId'
     })
   }
   return User
