@@ -1,4 +1,5 @@
 // var models  = require('../models');
+const checkAuth = require('../middleware/checkAuth')
 
 var express = require('express');
 var router  = express.Router();

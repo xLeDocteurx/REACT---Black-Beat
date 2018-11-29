@@ -6,10 +6,10 @@ const router  = express.Router()
 const ent = require('ent')
 const bcrypt = require('bcrypt')
 
-const authenticate = require('../middleware/authenticate')
+const checkAuth = require('../middleware/checkAuth')
 
 // Voir voir le profil de l'utilisateur courant
-router.get('/me', authenticate, (req, res) => {
+router.get('/me', checkAuth, (req, res) => {
     if(!req.user) { res.redirect('/404') }
     res.json(req.user)
 })
