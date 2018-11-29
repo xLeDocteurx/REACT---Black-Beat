@@ -6,6 +6,14 @@ const router  = express.Router()
 const ent = require('ent')
 const bcrypt = require('bcrypt')
 
+const authenticate = require('../middleware/authenticate')
+
+// Voir voir le profil de l'utilisateur courant
+router.get('/me', authenticate, (req, res) => {
+    if(!req.user) { res.redirect('/404') }
+    res.json(req.user)
+})
+
 //OK
 // Voir tous les utilisateurs
 router.get('/', (req, res) => {
@@ -16,11 +24,8 @@ router.get('/', (req, res) => {
         .then((users) => {
             res.json(users)
         })
-        .catch((err) => {    
-            console.log(err) 
-            res.send(`
-                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-            `)
+        .catch((e) => {
+            res.status(400).send(e)
         })
 })
 
@@ -37,11 +42,8 @@ router.get('/actives', (req, res) => {
         .then((users) => {
             res.json(users)
         })
-        .catch((err) => {    
-            console.log(err) 
-            res.send(`
-                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-            `)
+        .catch((e) => {
+            res.status(400).send(e)
         })
 })
 
@@ -57,11 +59,8 @@ router.get('/disabled', (req, res) => {
         .then((users) => {
             res.json(users)
         })
-        .catch((err) => {    
-            console.log(err) 
-            res.send(`
-                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-            `)
+        .catch((e) => {
+            res.status(400).send(e)
         })
 })
 
@@ -83,25 +82,16 @@ router.get('/:user_id', (req, res) => {
 
                     res.json(user)
                 })
-                .catch((err) => {    
-                    console.log(err)
-                    res.send(`
-                        This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-                    `)
+                .catch((e) => {
+                    res.status(400).send(e)
                 })
             })
-            .catch((err) => {    
-                console.log(err)
-                res.send(`
-                    This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-                `)
+            .catch((e) => {
+                res.status(400).send(e)
             })
         })
-        .catch((err) => {    
-            console.log(err)
-            res.send(`
-                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-            `)
+        .catch((e) => {
+            res.status(400).send(e)
         })
 })
 
@@ -119,25 +109,22 @@ router.get('/:user_id/projects', (req, res) => {
                 res.json(projects)
             })
         })
-        .catch((err) => {    
-            console.log(err)
-            res.send(`
-                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-            `)
+        .catch((e) => {
+            res.status(400).send(e)
         })
 })
 
 // OK
 // Créer un nouvel utilisateur
 router.post('/', (req, res) => {
-    const req_user =  req.body.user
+    const req_user = req.body.user
 
-    bcrypt.genSalt( serverConfig.security.saltRounds, (err, salt) => {
+    bcrypt.genSalt( serverConfig.bcrypt.saltRounds, (err, salt) => {
         bcrypt.hash(req_user.password, salt)
             .then((hash) => {
 
                 const user = models.User.build({
-                    active: req_user.active,
+                    active: true,
                     username: req_user.username,
                     email: req_user.email,
                     password: hash,
@@ -151,18 +138,13 @@ router.post('/', (req, res) => {
                         // res.redirect('/users')
                         res.json(user)
                     })
-                    .catch((err) => {   
-                        console.log(err) 
-                        res.send(`
-                            This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-                        `)
+                    .catch((e) => {
+                        console.log("You have been hacked by Vladimir Poutine")
+                        res.status(400).send(e)
                     })
             })
-            .catch((err) => {    
-                    console.log(err) 
-                    res.send(`
-                    This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-                `)
+            .catch((e) => {
+                res.status(400).send(e)
             })
     })
 
@@ -175,7 +157,7 @@ router.put('/:user_id', (req, res) => {
     const req_user =  req.body.user
     const user_id = ent.encode(req.params.user_id)
 
-    bcrypt.genSalt( serverConfig.security.saltRounds, (err, salt) => {
+    bcrypt.genSalt( serverConfig.bcrypt.saltRounds, (err, salt) => {
         bcrypt.hash(req_user.password, salt)
             .then((hash) => {
                 models.User.findByPk(user_id)
@@ -194,25 +176,16 @@ router.put('/:user_id', (req, res) => {
                             .then(
                                 res.send(user)
                             )
-                            .catch((err) => {    
-                                console.log(err) 
-                                res.send(`
-                                    This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-                                `)
+                            .catch((e) => {
+                                res.status(400).send(e)
                             })
                     })
-                    .catch((err) => {    
-                        console.log(err) 
-                        res.send(`
-                            This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-                        `)
+                    .catch((e) => {
+                        res.status(400).send(e)
                     })
             })
-            .catch((err) => {    
-                    console.log(err) 
-                    res.send(`
-                    This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-                `)
+            .catch((e) => {
+                res.status(400).send(e)
             })
     })
 })
@@ -232,18 +205,12 @@ router.delete('/:user_id', (req, res) => {
                 .then(
                     res.redirect('/users')
                 )
-                .catch((err) => {    
-                    console.log(err) 
-                    res.send(`
-                        This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-                    `)
+                .catch((e) => {
+                    res.status(400).send(e)
                 })
         })
-        .catch((err) => {    
-            console.log(err) 
-            res.send(`
-                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-            `)
+        .catch((e) => {
+            res.status(400).send(e)
         })
 })
 

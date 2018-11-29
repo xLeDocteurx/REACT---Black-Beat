@@ -7,7 +7,7 @@ const ent = require('ent')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
-
+const authenticate = require('../middleware/authenticate')
 
 router.get('/', (req, res) => {
     
@@ -16,11 +16,11 @@ router.get('/', (req, res) => {
     `)
 })
 
-router.post('/:user_id', (req, res) => {
+router.post('/login', (req, res) => {
 
     // const email = req.body.user.email
-    const user_id = req.params.user_id
-    const password = req.body.password
+    const user_id = req.body.user.user_id
+    const password = req.body.user.password
 
     // models.User.findById(user_id)
     models.User.findByPk(user_id)
@@ -33,33 +33,39 @@ router.post('/:user_id', (req, res) => {
             bcrypt.compare(password, hashed_password)
                 .then(response => {
                     if(response) {
-                        res.send(`
-                            This is the Black Beat API // AUTHENTICATION :: LOGIN SUCCESSFUL // 
-                            <br> 
-                            ${JSON.stringify(user)}
-                        `)
+                        user.generateAuthToken(serverConfig.jwt.secret)
+                            .then((token) => {
+                                res.send(`
+                                    This is the Black Beat API // AUTHENTICATION :: LOGIN SUCCESSFUL // 
+                                    <br> 
+                                    stringified : ${JSON.stringify(token)}
+                                    <br>
+                                    nature : ${token}
+                                `)
+                            })
+                            .catch((e) => {
+                                res.status(400).send(e)
+                            })
                     } else {
                         res.send(`
                             This is the Black Beat API // AUTHENTICATION :: LOGIN FAILED // 
                         `)
                     }
                 })
-                .catch(err => {
-                    console.log(err)
-                    res.send(`
-                        This is the Black Beat API // AUTHENTICATION :: ERROR // 
-                        <br> 
-                        ${err}
-                    `)
+                .catch((e) => {
+                    res.status(400).send(e)
                 })
         })
-        .catch(err => {
-            console.log(err)
-            res.send(`
-                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-            `)
+        .catch((e) => {
+            res.status(400).send(e)
         })
         
+})
+
+router.post('/logout', authenticate, (req, res) => {
+
+    req.user.Authorisation = null
+    res.redirect('/users/me')
 })
 
 module.exports = router

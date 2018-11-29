@@ -17,12 +17,9 @@ router.get('/', (req, res) => {
         .then((projects) => {
             res.json(projects)
         })
-        .catch((err) => {    
-            console.log(err) 
-            res.send(`
-                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-            `)
-        })
+        .catch((e) => {
+            res.status(400).send(e);
+        });
 })
 
 // OK
@@ -39,25 +36,16 @@ router.get('/:project_id', (req, res) => {
                     project.dataValues.contributors = contributors
                     res.json(project)
                 })
-                .catch((err) => {    
-                    console.log(err)
-                    res.send(`
-                        This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-                    `)
+                .catch((e) => {
+                    res.status(400).send(e)
                 })
-            })  
-            .catch((err) => {    
-                console.log(err)
-                res.send(`
-                    This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-                `)
+            })
+            .catch((e) => {
+                res.status(400).send(e)
             })
         })
-        .catch((err) => {    
-            console.log(err) 
-            res.send(`
-                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-            `)
+        .catch((e) => {
+            res.status(400).send(e)
         })
 })
 
@@ -71,18 +59,12 @@ router.get('/:project_id/author', (req, res) => {
             project.getAuthor().then((author) =>{
                 res.json(author)
             })
-            .catch((err) => {    
-                console.log(err)
-                res.send(`
-                    This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-                `)
+            .catch((e) => {
+                res.status(400).send(e)
             })
         })
-        .catch((err) => {    
-            console.log(err) 
-            res.send(`
-                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-            `)
+        .catch((e) => {
+            res.status(400).send(e)
         })
 })
 
@@ -96,18 +78,12 @@ router.get('/:project_id/contributors', (req, res) => {
             project.getContributors().then((contributors) =>{
                 res.json(contributors)
             })
-            .catch((err) => {    
-                console.log(err)
-                res.send(`
-                    This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-                `)
+            .catch((e) => {
+                res.status(400).send(e)
             })
         })
-        .catch((err) => {    
-            console.log(err) 
-            res.send(`
-                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-            `)
+        .catch((e) => {
+            res.status(400).send(e)
         })
 })
 
@@ -127,11 +103,8 @@ router.post('/', (req, res) => {
         .then(
             res.json(project)
         )
-        .catch((err) => {    
-            console.log(err) 
-            res.send(`
-                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-            `)
+        .catch((e) => {
+            res.status(400).send(e)
         })
 
 })
@@ -154,18 +127,12 @@ router.put('/:project_id', (req, res) => {
                 .then(
                     res.send(project)
                 )
-                .catch((err) => {    
-                    console.log(err) 
-                    res.send(`
-                        This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-                    `)
+                .catch((e) => {
+                    res.status(400).send(e)
                 })
         })
-        .catch((err) => {    
-            console.log(err) 
-            res.send(`
-                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-            `)
+        .catch((e) => {
+            res.status(400).send(e)
         })
 })
 
@@ -182,11 +149,8 @@ router.delete('/:project_id', (req, res) => {
                 .then(
                     res.redirect('/projects')
                 )
-                .catch((err) => {    
-                    console.log(err) 
-                    res.send(`
-                        This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-                    `)
+                .catch((e) => {
+                    res.status(400).send(e)
                 })
         })
         .catch((err) => {    
@@ -211,18 +175,12 @@ router.post('/:project_id/invite', (req, res) => {
                 .then(
                     res.redirect(`/projects/${projectId}`)
                 )
-                .catch((err) => {    
-                    console.log(err) 
-                    res.send(`
-                        This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-                    `)
+                .catch((e) => {
+                    res.status(400).send(e)
                 })
         })
-        .catch((err) => {    
-            console.log(err) 
-            res.send(`
-                This is the Black Beat API // SOMETHING WENT WRONG // ${err}
-            `)
+        .catch((e) => {
+            res.status(400).send(e)
         })
 })
 

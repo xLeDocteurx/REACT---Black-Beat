@@ -8,10 +8,23 @@ module.exports = (sequelize, DataTypes) => {
     avatar: DataTypes.STRING,
     bio: DataTypes.TEXT
   }, {})
-  // User.hasMany(Project, {foreignKey: 'fk_pro'})
+
+  User.generateAuthToken = function(secret) {
+    // const user = this
+    return jwt.sign({id: this.id, user: this}, secret,
+      { 
+        algorithm: 'RS256',
+        expiresIn: '24h'
+      }
+      // , 
+      // (err, token) => {
+      //   // if(err) console.log(err)
+      //   console.log(token)
+      // }
+    )
+  }
+
   User.associate = function(models) {
-    // models.User.belongsTo(models.Project, {as: 'currentProject'})
-    // associations can be defined here
     models.User.belongsTo(models.Project, {
       as: 'currentProject'
       // onDelete: "CASCADE"
@@ -19,7 +32,6 @@ module.exports = (sequelize, DataTypes) => {
     models.User.hasMany(models.Project, {
       foreignKey: 'authorId'
     })
-
     models.User.belongsToMany(models.Project, {
       as: 'Contributions',
       through: 'Contributors',
