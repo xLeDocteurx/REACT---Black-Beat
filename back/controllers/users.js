@@ -180,7 +180,7 @@ router.put('/:user_id', (req, res) => {
             .then((hash) => {
                 models.User.findByPk(user_id)
                     .then((user) => {
-                        if (!user) res.send(`This is the Black Beat API // YOU ARE NOT DELETING USER // ${user_id}`)
+                        if (!user) res.send(`This is the Black Beat API // YOU ARE NOT UPDATING USER // ${user_id}`)
                         
                         user.update({
                             active: req_user.active,
@@ -226,7 +226,7 @@ router.delete('/:user_id', (req, res) => {
 
     models.User.findByPk(user_id)
         .then((user) => {
-            if (!user) res.send(`This is the Black Beat API // YOU ARE NOT UPDATING USER // ${user_id}`)
+            if (!user) res.send(`This is the Black Beat API // YOU ARE NOT DELETING USER // ${user_id}`)
             
             user.destroy()
                 .then(
