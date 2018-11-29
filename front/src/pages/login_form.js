@@ -11,10 +11,6 @@ class Login_Form extends Component {
 
     }
 
-    submit() {
-        
-    }
-
     render() {
         
         return (

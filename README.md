@@ -42,6 +42,8 @@ Evolving constantly, the Black-Beat project is meant to be upgraded to suit peop
 
 ### Back :
 * "npm i"
+* configure the "./back/serverConfig.json"
+* configure the "./back/config/config.json"
 * "npm run db:install"
 * "npm run start"
 
