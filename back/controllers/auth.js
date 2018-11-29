@@ -19,22 +19,26 @@ router.get('/', (req, res) => {
 router.post('/login', (req, res) => {
 
     // const email = req.body.user.email
-    const user_id = req.body.user.user_id
-    const password = req.body.user.password
+    const req_user_id = req.body.user.id
+    const req_password = req.body.user.password
 
-    // models.User.findById(user_id)
-    models.User.findByPk(user_id)
+    // models.User.findById(req_user_id)
+    models.User.findByPk(req_user_id)
         .then((user) => {
             if (!user) {res.send(`
-                This is the Black Beat API // AUTHENTICATION :: THIS USER DOES NOT EXIST // ${user_id}
+                This is the Black Beat API // AUTHENTICATION :: THIS USER DOES NOT EXIST // ${req_user_id}
             `)}
 
             const hashed_password = user.password
-            bcrypt.compare(password, hashed_password)
+            console.log('lancement de la comparaison')
+            bcrypt.compare(req_password, hashed_password)
                 .then(response => {
+                    console.log(`nous allons comparer ${req_password} et ${hashed_password}`)
                     if(response) {
+                        console.log('il y a eu une réponse')
                         user.generateAuthToken(serverConfig.jwt.secret)
                             .then((token) => {
+                                console.log('onrécupère le token')
                                 res.send(`
                                     This is the Black Beat API // AUTHENTICATION :: LOGIN SUCCESSFUL // 
                                     <br> 

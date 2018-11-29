@@ -10,6 +10,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {})
 
   User.generateAuthToken = function(secret) {
+
+    console.log('on génère un token')
     // const user = this
     return jwt.sign({id: this.id, user: this}, secret,
       { 

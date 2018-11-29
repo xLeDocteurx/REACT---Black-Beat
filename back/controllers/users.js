@@ -114,6 +114,7 @@ router.get('/:user_id/projects', (req, res) => {
         })
 })
 
+// !! Déplacer cette route vers son propre fichier 'register.js'   ( un peu comme le system d'auth )
 // OK
 // Créer un nouvel utilisateur
 router.post('/', (req, res) => {
