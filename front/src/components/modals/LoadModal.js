@@ -5,22 +5,46 @@ import {
 
 class LoadModal extends Modal {
 
-    state = {}
+    // state = {}
 
-    // constructor(props) {
+    constructor(props) {
 
-    //     super(props)
+        super(props)
 
-    //     this.state = {
-    //         projects: projects.projects,
-    //     }
-    // }
+        this.state = {
+            // projects: projects.projects,
+            project: null
+        }
+    }
 
     loadProject = (id) => {
-        console.log(`Trying to save a project ${id}`);
+        console.log(`Trying to load a project ${id}`)
+        // window.axios.get(`http://localhost:3001/projects/${id}`).then(data => {
+        //     console.log(data)
+        //     this.state.project = data
+        // })
     }
     
     render () {
+
+        const all_projects = this.props.projects.map(project => (
+            <List.Item key={project.id} 
+            // as='a' 
+            // href='http://google.com' 
+            // target='_BLANK'
+            // onClick={this.loadProject(project.id)}
+            >
+                <List.Icon name='github' size='large' verticalAlign='middle' />
+                <List.Content>
+                    <List.Header 
+                        // as='a'
+                    >{ project.id } !! { project.title }</List.Header>
+                    <List.Description 
+                        // as='a'
+                    >{ project.owner }</List.Description>
+                </List.Content>
+            </List.Item>
+        ))
 
         return (
 
@@ -38,27 +62,7 @@ class LoadModal extends Modal {
                     <Modal.Description>
                         <List selection divided relaxed>
 
-                            {this.props.projects.map(project => (
-
-
-                                <List.Item key={project.id} 
-                                // as='a' 
-                                // href='http://google.com' 
-                                // target='_BLANK'
-                                // onClick={this.loadProject(project.id)}
-                                >
-                                    <List.Icon name='github' size='large' verticalAlign='middle' />
-                                    <List.Content>
-                                        <List.Header 
-                                            // as='a'
-                                        >{ project.id } !! { project.title }</List.Header>
-                                        <List.Description 
-                                            // as='a'
-                                        >{ project.owner }</List.Description>
-                                    </List.Content>
-                                </List.Item>
-
-                            ))}
+                            {all_projects}
 
                         </List>
                     </Modal.Description>
@@ -71,4 +75,4 @@ class LoadModal extends Modal {
 
 
 
-export default LoadModal;
+export default LoadModal

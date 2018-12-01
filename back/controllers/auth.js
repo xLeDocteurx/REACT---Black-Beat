@@ -34,10 +34,10 @@ router.post('/login', (req, res) => {
                 .then(response => {
                     if(response) {
                         jwt.sign({ email: user.email }, serverConfig.jwt.secret,
-                            { 
+                            {
                                 // algorithm: 'RS256',
                                 expiresIn: '24h'
-                            }, 
+                            },
                             function(err, token) {
                                 if(err) {console.log(err);res.send(err)}
                                 res.header('Authorization', token).json(user)
