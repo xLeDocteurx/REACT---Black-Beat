@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { NavLink } from "react-router-dom"
 import { 
     // Image, Dropdown,
     Menu, 
@@ -43,14 +44,16 @@ export default class MenuExampleHeader extends Component {
                 position="right"
                 >
                     <Menu.Item
-                    as="a"
-                    href="/register"
+                    as={NavLink}
+                    to="/register"
+                    activeClassName="active"
                     >
                     Register
                     </Menu.Item>
                     <Menu.Item
-                    as="a"
-                    href="/login"
+                    as={NavLink}
+                    to="/login"
+                    activeClassName="active"
                     >
                     Log In
                     </Menu.Item>

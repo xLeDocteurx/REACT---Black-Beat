@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom"
 import { 
     // Image,
     Dropdown, Menu, 
@@ -18,7 +19,9 @@ export default class MenuExampleHeader extends Component {
         super(props)
 
         this.state = {
-            isLoggedIn: false
+            currentUser: {
+                username: "LeDocteur"
+            }
         }
 
     }
@@ -43,13 +46,14 @@ export default class MenuExampleHeader extends Component {
             <Dropdown item text="File">
                 <Dropdown.Menu>
                     
-                    <NewModal />
+                    {/* <NewModal /> */}
 
-                    <LoadModal projects={this.props.projects}/>
+                    {/* <LoadModal projects={this.state.projects}/> */}
 
                     <Dropdown.Item 
-                        // as='button'
-                        // href="#"
+                        // as="{NavLink}"
+                        // to="#"
+                        activeClassName="active"
                         text='Save'
                         description='ctrl + s' 
                         icon='save'
@@ -57,8 +61,9 @@ export default class MenuExampleHeader extends Component {
                     />
 
                     <Dropdown.Item 
-                        // as='button'
-                        // href="#"
+                        // as="{NavLink}"
+                        // to="#"
+                        activeClassName="active"
                         text='Delete'
                         // description='ctrl + s' 
                         icon='trash'
@@ -68,8 +73,9 @@ export default class MenuExampleHeader extends Component {
                     <Dropdown.Divider />
                     <Dropdown.Header>Export</Dropdown.Header>
                     <Dropdown.Item
-                        // as='button'
-                        // href="#"
+                        // as="{NavLink}"
+                        // to="#"
+                        activeClassName="active"
                         text='Share'
                         // description='ctrl + s' 
                         icon='share'
@@ -101,8 +107,9 @@ export default class MenuExampleHeader extends Component {
         
             <Menu.Item
             name="Help"
-            as="a"
-            href="https://github.com/xLeDocteurx/REACT---Black-Beat"
+            as={NavLink}
+            to="https://github.com/xLeDocteurx/REACT---Black-Beat"
+            activeClassName="active"
             target="_BLANK"
             // position="right"
             // active={activeItem === "Help"}
@@ -111,26 +118,28 @@ export default class MenuExampleHeader extends Component {
 
             {/* <Menu.Item 
             // className="centered" 
-                header>{this.props.currentProject.title}
+                header>{this.state.currentProject.title}
             </Menu.Item> */}
                 <Menu.Menu
                 position="right"
                 >
                     <Dropdown
                     item
-                    text={this.props.currentUser.username}
+                    text={this.state.currentUser.username}
                     >
-                    {/* <Image src={this.props.currentUser.avatar} alt="User Avatar" avatar /> */}
+                    {/* <Image src={this.state.currentUser.avatar} alt="User Avatar" avatar /> */}
                         <Dropdown.Menu>
                             <Dropdown.Item
                             text="Profile"
-                            as="a"
-                            href="#"
+                            as={NavLink}
+                            to="/profile"
+                            activeClassName="active"
                             />
                             <Dropdown.Item
                             text="Log Out"
-                            as="a"
-                            href="#"
+                            as={NavLink}
+                            to="/logout"
+                            activeClassName="active"
                             />
                         </Dropdown.Menu>
                     </Dropdown>

@@ -7,7 +7,7 @@ import {
 
 import './Forms.css'
 
-class LoginForm extends Component {
+class RegisterForm extends Component {
 
     constructor(props) {
         super(props)
@@ -37,7 +37,7 @@ class LoginForm extends Component {
             <Grid centered>
                 <Grid.Column width={10}>
                     <Segment>
-                        <h1>Log In</h1>
+                        <h1>Register</h1>
                         <Form 
                         // loading
                         onSubmit={this.handleSubmit}
@@ -67,4 +67,4 @@ class LoginForm extends Component {
     }
 }
 
-export default LoginForm
+export default RegisterForm

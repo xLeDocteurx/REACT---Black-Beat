@@ -12,11 +12,13 @@ import './App.css'
 
 // Les pages de  l'application
 import LoginForm from './pages/LoginForm'
+import RegisterForm from './pages/RegisterForm'
 import DAO from './pages/DAO'
 
 // Les parts de l'application
 import Header from './components/parts/Header'
 import HeaderVisitor from './components/parts/HeaderVisitor'
+import Profile from './pages/Profile';
 
 class App extends Component {
 
@@ -42,6 +44,8 @@ class App extends Component {
 
 
         <Route path="/dao" component={DAO} />
+        <Route path="/profile" component={Profile} />
+        <Route path="/register" component={RegisterForm} />
         <Route path="/login" component={LoginForm} />
 
       </div>
