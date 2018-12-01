@@ -1,23 +1,22 @@
 import React, { Component } from 'react'
-import { 
-  // List,
-  // Grid, Container, Segments, Segment 
-} from 'semantic-ui-react'
+import { Route } from "react-router";
+// import { Menu } from 'semantic-ui-react'
 
 // import logo from './logo.svg'
 import './App.css'
 
 // import firebase from 'firebase'
-import core from './json/core.json'
-import projects from './json/projects.json'
-import users from './json/users.json'
+// import core from './json/core.json'
+// import projects from './json/projects.json'
+// import users from './json/users.json'
 
 // Les pages de  l'application
 import LoginForm from './pages/LoginForm'
-// import DAO from './pages/DAO'
+import DAO from './pages/DAO'
 
 // Les parts de l'application
 import Header from './components/parts/Header'
+import HeaderVisitor from './components/parts/HeaderVisitor'
 
 class App extends Component {
 
@@ -25,14 +24,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      // storage: storage,
-      // storageRef: storageRef,
-      // // firestore: firestore,
-      core: core.core,
-      users: users.users,
-      projects: projects.projects,
-      currentUser: users.users[0],
-      currentProject: projects.projects[0]
+      isLoggedIn: false,
     }
   }
   
@@ -40,17 +32,17 @@ class App extends Component {
     
     return (
       <div>
-        <Header 
-        projects={this.state.projects} 
-        currentUser={this.state.currentUser}
-        currentProject={this.state.currentProject}
-        />
+        {this.state.isLoggedIn ? (
+          <Header 
+          // projects={this.state.projects} 
+          />
+        ) : (
+          <HeaderVisitor/>
+        )}
 
 
-
-        <LoginForm/>
-          
-        {/* <DAO/> */}
+        <Route path="/dao" component={DAO} />
+        <Route path="/login" component={LoginForm} />
 
       </div>
     )

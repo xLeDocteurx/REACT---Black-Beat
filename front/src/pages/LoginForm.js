@@ -40,7 +40,7 @@ class LoginForm extends Component {
                 onSubmit={this.handleSubmit}
                 >
                     <Form.Field>
-                        <label>Email: {this.state.email}</label>
+                        <label>Email:</label>
                         <input type="text" placeholder="enter ..." 
                             // id="email"
                             name="email"
@@ -48,7 +48,7 @@ class LoginForm extends Component {
                             onChange={this.handleChange}/>
                     </Form.Field>
                     <Form.Field>
-                        <label>Password: {this.state.password}</label>
+                        <label>Password:</label>
                         <input type="password" placeholder="enter ..." 
                             // id="password"
                             name="password"

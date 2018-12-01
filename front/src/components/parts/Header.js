@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Image, Dropdown, Menu, 
+import { 
+    // Image,
+    Dropdown, Menu, 
     // Divider
     } from "semantic-ui-react";
 
@@ -16,7 +18,7 @@ export default class MenuExampleHeader extends Component {
         super(props)
 
         this.state = {
-
+            isLoggedIn: false
         }
 
     }
@@ -37,7 +39,7 @@ export default class MenuExampleHeader extends Component {
 
         return (
         <Menu attached="top">
-            {/* <Menu inverted> */}
+            {/* <s inverted> */}
             <Dropdown item text="File">
                 <Dropdown.Menu>
                     
@@ -107,19 +109,34 @@ export default class MenuExampleHeader extends Component {
             onClick={this.handleItemClick}
             />
 
-            <Menu.Item 
+            {/* <Menu.Item 
             // className="centered" 
                 header>{this.props.currentProject.title}
-            </Menu.Item>
+            </Menu.Item> */}
+                <Menu.Menu
+                position="right"
+                >
+                    <Dropdown
+                    item
+                    text={this.props.currentUser.username}
+                    >
+                    {/* <Image src={this.props.currentUser.avatar} alt="User Avatar" avatar /> */}
+                        <Dropdown.Menu>
+                            <Dropdown.Item
+                            text="Profile"
+                            as="a"
+                            href="#"
+                            />
+                            <Dropdown.Item
+                            text="Log Out"
+                            as="a"
+                            href="#"
+                            />
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </Menu.Menu>
 
-            <Menu.Item
-            as="a"
-            href="#"
-            // onClick=""
-            position="right">
-                <Image src={this.props.currentUser.avatar} alt="User Avatar" avatar />
-                <span>{this.props.currentUser.username}</span>
-            </Menu.Item>
+
         </Menu>
         );
     }
