@@ -35,7 +35,7 @@ class LoginForm extends Component {
         
         return (
             <Grid centered>
-                <Grid.Column width={10}>
+                <Grid.Column width={8}>
                     <Segment>
                         <h1>Log In</h1>
                         <Form 

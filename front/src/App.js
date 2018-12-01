@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Route } from "react-router";
+import { createStore } from 'redux'
 // import { Menu } from 'semantic-ui-react'
 
 // import logo from './logo.svg'
