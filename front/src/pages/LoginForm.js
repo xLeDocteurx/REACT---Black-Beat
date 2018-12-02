@@ -29,6 +29,7 @@ class LoginForm extends Component {
 
     handleSubmit(event) {
         this.setState({isLoading: true})
+        console.log(this.state.isLoading)
         const user = {
             "email": this.state.email,
             "password": this.state.password
@@ -36,9 +37,10 @@ class LoginForm extends Component {
         axios.post('http://localhost:3001/auth/login', {user})
             .then((response) => {
                 console.table(response.data)
+                window.location.replace("/profile");
             },
             (response) => {
-                alert(response.response.data)
+                // alert(response.response.data)
             })
         event.preventDefault()
     }

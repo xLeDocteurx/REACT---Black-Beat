@@ -140,7 +140,7 @@ router.post('/', (req, res) => {
                         res.json(user)
                     })
                     .catch((e) => {
-                        console.log("You have been hacked by Vladimir Poutine")
+                        console.log(err)
                         res.status(400).send(e)
                     })
             })

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { 
-    Grid, Segment, Button, Form
+    Dimmer, Loader, Grid, Segment, Button, Form
 } from 'semantic-ui-react'
 
 import './Forms.css'
@@ -43,7 +43,7 @@ class RegisterForm extends Component {
                 console.table(response.data)
             },
             (response) => {
-                alert(response.response.data)
+                // alert(response.response.data)
             })
         event.preventDefault()
     }
