@@ -37,10 +37,11 @@ class LoginForm extends Component {
         axios.post('http://localhost:3001/auth/login', {user})
             .then((response) => {
                 console.table(response.data)
-                window.location.replace("/profile");
+                window.location.replace("/profile")
             },
             (response) => {
-                // alert(response.response.data)
+                alert(response.response.data)
+                window.location.replace("/login")
             })
         event.preventDefault()
     }
