@@ -19,33 +19,38 @@ router.get('/', (req, res) => {
 router.post('/login', (req, res) => {
 
     // const email = req.body.user.email
-    const req_user_id = req.body.user.id
+    if(!req.body.user.email && !req.body.user.password){res.status(400).send(`WTF`)}
+    const req_user_email = req.body.user.email
     const req_password = req.body.user.password
 
-    // models.User.findById(req_user_id)
-    models.User.findByPk(req_user_id)
-        .then((user) => {
-            if (!user) {res.send(`
-                This is the Black Beat API // AUTHENTICATION :: THIS USER DOES NOT EXIST // ${req_user_id}
+    // models.User.findById(req_user_email)
+    models.User.findAll({
+        where: {
+            email: req_user_email
+        }
+    })
+        .then((users) => {
+            if (!users[0]) {res.status(400).send(`
+                THIS USER DOES NOT EXIST
             `)}
 
-            const hashed_password = user.password
+            const hashed_password = users[0].password
             bcrypt.compare(req_password, hashed_password)
                 .then(response => {
                     if(response) {
-                        jwt.sign({ email: user.email }, serverConfig.jwt.secret,
+                        jwt.sign({ email: users[0].email }, serverConfig.jwt.secret,
                             {
                                 // algorithm: 'RS256',
                                 expiresIn: '24h'
                             },
                             function(err, token) {
                                 if(err) {console.log(err);res.send(err)}
-                                res.header('Authorization', token).json(user)
+                                res.header('Authorization', token).json(users[0])
                             }
                         )
                     } else {
-                        res.send(`
-                            This is the Black Beat API // AUTHENTICATION :: LOGIN FAILED // 
+                        res.status(400).send(`
+                            WRONG PASSWORD
                         `)
                     }
                 })

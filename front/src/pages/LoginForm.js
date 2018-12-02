@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import { 
-    Grid, Segment, Button, Form
+    Dimmer, Loader, Grid, Segment, Button, Form
 } from 'semantic-ui-react'
-
-// import axios from 'axios'
 
 import './Forms.css'
 
@@ -13,11 +12,13 @@ class LoginForm extends Component {
         super(props)
 
         this.state = {
-            email: 'email',
-            password: 'password'
+            isLoading: false,
+            email: '',
+            password: ''
         }
 
         this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange(event) {
@@ -27,7 +28,18 @@ class LoginForm extends Component {
     }
 
     handleSubmit(event) {
-
+        this.setState({isLoading: true})
+        const user = {
+            "email": this.state.email,
+            "password": this.state.password
+        }
+        axios.post('http://localhost:3001/auth/login', {user})
+            .then((response) => {
+                console.table(response.data)
+            },
+            (response) => {
+                alert(response.response.data)
+            })
         event.preventDefault()
     }
 
@@ -37,8 +49,13 @@ class LoginForm extends Component {
             <Grid centered>
                 <Grid.Column width={8}>
                     <Segment>
+                        {this.state.isLoading ? (
+                            <Dimmer active inverted>
+                                <Loader/>
+                            </Dimmer>
+                        ) : ('')}
                         <h1>Log In</h1>
-                        <Form 
+                        <Form
                         // loading
                         onSubmit={this.handleSubmit}
                         >

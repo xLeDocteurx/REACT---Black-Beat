@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import { 
     Grid, Segment, Button, Form
 } from 'semantic-ui-react'
-
-// import axios from 'axios'
 
 import './Forms.css'
 
@@ -13,11 +12,13 @@ class RegisterForm extends Component {
         super(props)
 
         this.state = {
+            isLoading: false,
             email: 'email',
             password: 'password'
         }
 
         this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange(event) {
@@ -27,7 +28,23 @@ class RegisterForm extends Component {
     }
 
     handleSubmit(event) {
-
+        this.setState({isLoading: true})
+        const user = {
+            "email": "name@gmail.com",
+            "password": "name",
+            "avatar": "./autop.png",
+            "bio": "name is hot and dangerous !",
+            "currentProjectId": 1
+        }
+        console.log('user')
+        console.log(user)
+        axios.post('http://localhost:3001/users', {user})
+            .then((response) => {
+                console.table(response.data)
+            },
+            (response) => {
+                alert(response.response.data)
+            })
         event.preventDefault()
     }
 
@@ -37,6 +54,11 @@ class RegisterForm extends Component {
             <Grid centered>
                 <Grid.Column width={8}>
                     <Segment>
+                        {this.state.isLoading ? (
+                            <Dimmer active inverted>
+                                <Loader/>
+                            </Dimmer>
+                        ) : ('')}
                         <h1>Register</h1>
                         <Form 
                         // loading

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route } from "react-router";
+import { Route } from "react-router"
 import { createStore } from 'redux'
 // import { Menu } from 'semantic-ui-react'
 
@@ -19,7 +19,7 @@ import DAO from './pages/DAO'
 // Les parts de l'application
 import Header from './components/parts/Header'
 import HeaderVisitor from './components/parts/HeaderVisitor'
-import Profile from './pages/Profile';
+import Profile from './pages/Profile'
 
 class App extends Component {
 
