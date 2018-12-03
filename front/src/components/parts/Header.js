@@ -11,7 +11,7 @@ import LoadModal from "../modals/LoadModal";
 
 import './Header.css';
 
-export default class MenuExampleHeader extends Component {
+export default class Header extends Component {
 
     // state = {};
 
@@ -19,6 +19,7 @@ export default class MenuExampleHeader extends Component {
         super(props)
 
         this.state = {
+            jwt: null,
             currentUser: {
                 username: "LeDocteur"
             }
@@ -35,6 +36,12 @@ export default class MenuExampleHeader extends Component {
 
     //     // DB.newProject();
     // }
+    componentWillMount() {
+        console.log('componentWillMount : Header')
+        if(sessionStorage.getItem('jwt')){
+          this.setState({jwt:JSON.parse(sessionStorage.getItem('jwt'))})
+        }
+    }
 
     render() {
         // const { activeItem } = this.state;
@@ -104,7 +111,9 @@ export default class MenuExampleHeader extends Component {
                 <Dropdown.Item>Load</Dropdown.Item>
             </Dropdown.Menu>
             </Dropdown> */}
-        
+
+            {this.state.jwt}
+
             <Menu.Item
             name="Help"
             as={NavLink}

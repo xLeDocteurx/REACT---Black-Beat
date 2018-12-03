@@ -123,24 +123,25 @@ router.post('/', (req, res) => {
     bcrypt.genSalt( serverConfig.bcrypt.saltRounds, (err, salt) => {
         bcrypt.hash(req_user.password, salt)
             .then((hash) => {
-
+            
                 const user = models.User.build({
-                    active: true,
-                    username: req_user.username,
+                    active: 1,
+                    username: req_user.email.split('@')[0],
                     email: req_user.email,
                     password: hash,
                     avatar: './autop.png',
                     bio: `${req_user.username} is hot and dangerous !`,
                     currentProjectId: 1
                 })
-            
+
                 user.save()
                     .then(() => {
                         // res.redirect('/users')
                         res.json(user)
-                    })
+                    },
+                    (e) => {console.log(e)})
                     .catch((e) => {
-                        console.log(err)
+                        console.log(e)
                         res.status(400).send(e)
                     })
             })

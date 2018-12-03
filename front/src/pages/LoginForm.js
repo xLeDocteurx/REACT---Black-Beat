@@ -36,7 +36,7 @@ class LoginForm extends Component {
         }
         axios.post('http://localhost:3001/auth/login', {user})
             .then((response) => {
-                console.table(response.data)
+                sessionStorage.setItem('jwt', JSON.stringify(response.data))
                 window.location.replace("/profile")
             },
             (response) => {

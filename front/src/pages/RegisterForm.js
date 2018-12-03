@@ -13,8 +13,8 @@ class RegisterForm extends Component {
 
         this.state = {
             isLoading: false,
-            email: 'email',
-            password: 'password'
+            email: '',
+            password: ''
         }
 
         this.handleChange = this.handleChange.bind(this)
@@ -30,20 +30,21 @@ class RegisterForm extends Component {
     handleSubmit(event) {
         this.setState({isLoading: true})
         const user = {
-            "email": "name@gmail.com",
-            "password": "name",
-            "avatar": "./autop.png",
-            "bio": "name is hot and dangerous !",
+            "email": this.state.email,
+            "password": this.state.password,
+            "avatar": "./logo.png",
+            "bio": `${this.state.email} did not filled his resume at the moment`,
             "currentProjectId": 1
         }
-        console.log('user')
-        console.log(user)
+
         axios.post('http://localhost:3001/users', {user})
             .then((response) => {
                 console.table(response.data)
+                window.location.replace("/profile")
             },
             (response) => {
                 // alert(response.response.data)
+                window.location.replace("/register")
             })
         event.preventDefault()
     }
@@ -66,18 +67,20 @@ class RegisterForm extends Component {
                         >
                             <Form.Field>
                                 <label>Email:</label>
-                                <input type="text" placeholder="enter ..." 
+                                <input type="text" placeholder="Enter a valid email adress" 
                                     // id="email"
                                     name="email"
                                     // value={this.state.email} 
+                                    // value=""
                                     onChange={this.handleChange}/>
                             </Form.Field>
                             <Form.Field>
                                 <label>Password:</label>
-                                <input type="password" placeholder="enter ..." 
+                                <input type="password" placeholder="Enter an username" 
                                     // id="password"
                                     name="password"
-                                    // value={this.state.password} 
+                                    // value={this.state.password}
+                                    // value=""
                                     onChange={this.handleChange}/>
                             </Form.Field>
                             <Button type='submit' value="Submit">Submit</Button>

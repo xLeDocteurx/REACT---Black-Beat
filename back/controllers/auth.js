@@ -44,7 +44,7 @@ router.post('/login', (req, res) => {
                                 expiresIn: '24h'
                             },
                             function(err, token) {
-                                if(err) {console.log(err);res.send(err)}
+                                if(err) {console.log(err);res.status(400).send(err)}
                                 res.header('Authorization', token).json(users[0])
                             }
                         )

@@ -14,7 +14,6 @@ module.exports = {
         type: Sequelize.BOOLEAN
       },
       username: {
-        unique: true,
         type: Sequelize.STRING
       },
       email: {
