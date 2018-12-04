@@ -1,5 +1,9 @@
 import React, { Component } from "react"
 import { Segment, Grid, Card, Feed, Icon } from 'semantic-ui-react'
+import axios from 'axios'
+// import checkToken from './checkToken.js'
+
+import './Profile.css'
 
 export default class Profile extends Component {
 
@@ -9,6 +13,21 @@ export default class Profile extends Component {
         this.state = {
 
         }
+    }
+
+    componentWillMount() {
+        console.log('componentWillMount : Profile')
+        const jwt = JSON.parse(sessionStorage.getItem('jwt'))
+
+        axios({method: 'get',
+            url:'http://localhost:3001/users/me',
+            headers: {Authorization: jwt}})
+            .then(response => {
+                console.log(response)
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
     render() {

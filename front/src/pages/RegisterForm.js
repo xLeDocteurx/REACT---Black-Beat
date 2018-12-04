@@ -38,11 +38,11 @@ class RegisterForm extends Component {
         }
 
         axios.post('http://localhost:3001/users', {user})
-            .then((response) => {
+            .then(response => {
                 console.table(response.data)
                 window.location.replace("/profile")
-            },
-            (response) => {
+            })
+            .catch(err => {
                 // alert(response.response.data)
                 window.location.replace("/register")
             })

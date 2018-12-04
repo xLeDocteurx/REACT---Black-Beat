@@ -29,18 +29,18 @@ class LoginForm extends Component {
 
     handleSubmit(event) {
         this.setState({isLoading: true})
-        console.log(this.state.isLoading)
+
         const user = {
             "email": this.state.email,
             "password": this.state.password
         }
         axios.post('http://localhost:3001/auth/login', {user})
-            .then((response) => {
+            .then(response => {
                 sessionStorage.setItem('jwt', JSON.stringify(response.data))
                 window.location.replace("/profile")
-            },
-            (response) => {
-                alert(response.response.data)
+            })
+            .catch(err => {
+                alert(err.response.data)
                 window.location.replace("/login")
             })
         event.preventDefault()

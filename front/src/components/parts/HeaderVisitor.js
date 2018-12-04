@@ -13,8 +13,6 @@ import './Header.css'
 
 export default class MenuExampleHeader extends Component {
 
-    // state = {}
-
     constructor (props) {
         super(props)
 

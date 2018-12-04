@@ -10,7 +10,7 @@ const checkAuth = require('../middleware/checkAuth')
 
 // Voir voir le profil de l'utilisateur courant
 router.get('/me', checkAuth, (req, res) => {
-    if(!req.user) { res.redirect('/404') }
+    // if(!req.user) { res.status(400).json(req) }
     res.json(req.user)
 })
 

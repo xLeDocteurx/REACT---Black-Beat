@@ -19,10 +19,7 @@ export default class Header extends Component {
         super(props)
 
         this.state = {
-            jwt: null,
-            currentUser: {
-                username: "LeDocteur"
-            }
+            
         }
 
     }
@@ -36,12 +33,6 @@ export default class Header extends Component {
 
     //     // DB.newProject();
     // }
-    componentWillMount() {
-        console.log('componentWillMount : Header')
-        if(sessionStorage.getItem('jwt')){
-          this.setState({jwt:JSON.parse(sessionStorage.getItem('jwt'))})
-        }
-    }
 
     render() {
         // const { activeItem } = this.state;
@@ -60,7 +51,7 @@ export default class Header extends Component {
                     <Dropdown.Item 
                         // as="{NavLink}"
                         // to="#"
-                        activeClassName="active"
+                        // activeClassName="active"
                         text='Save'
                         description='ctrl + s' 
                         icon='save'
@@ -70,7 +61,7 @@ export default class Header extends Component {
                     <Dropdown.Item 
                         // as="{NavLink}"
                         // to="#"
-                        activeClassName="active"
+                        // activeClassName="active"
                         text='Delete'
                         // description='ctrl + s' 
                         icon='trash'
@@ -82,7 +73,7 @@ export default class Header extends Component {
                     <Dropdown.Item
                         // as="{NavLink}"
                         // to="#"
-                        activeClassName="active"
+                        // activeClassName="active"
                         text='Share'
                         // description='ctrl + s' 
                         icon='share'
@@ -118,7 +109,7 @@ export default class Header extends Component {
             name="Help"
             as={NavLink}
             to="https://github.com/xLeDocteurx/REACT---Black-Beat"
-            activeClassName="active"
+            // activeClassName="active"
             target="_BLANK"
             // position="right"
             // active={activeItem === "Help"}
@@ -134,7 +125,7 @@ export default class Header extends Component {
                 >
                     <Dropdown
                     item
-                    text={this.state.currentUser.username}
+                    text="LeDocteur"
                     >
                     {/* <Image src={this.state.currentUser.avatar} alt="User Avatar" avatar /> */}
                         <Dropdown.Menu>
@@ -142,13 +133,13 @@ export default class Header extends Component {
                             text="Profile"
                             as={NavLink}
                             to="/profile"
-                            activeClassName="active"
+                            // activeClassName="active"
                             />
                             <Dropdown.Item
                             text="Log Out"
                             as={NavLink}
                             to="/logout"
-                            activeClassName="active"
+                            // activeClassName="active"
                             />
                         </Dropdown.Menu>
                     </Dropdown>

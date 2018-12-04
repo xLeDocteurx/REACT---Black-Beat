@@ -27,15 +27,19 @@ class App extends Component {
     super(props)
 
     this.state = {
+      jwt: null,
       isLoggedIn: false,
+      currentUser: null
     }
   }
   
   componentWillMount() {
       console.log('componentWillMount : App')
+      const jwt = JSON.parse(sessionStorage.getItem('jwt'))
       if(sessionStorage.getItem('jwt')){
-          this.setState({jwt:JSON.parse(sessionStorage.getItem('jwt'))})
+          this.setState({jwt:jwt})
       }
+      
   }
   
   render() {
@@ -43,9 +47,7 @@ class App extends Component {
     return (
       <div>
         {this.state.isLoggedIn ? (
-          <Header 
-          // projects={this.state.projects} 
-          />
+          <Header/>
         ) : (
           <HeaderVisitor/>
         )}
