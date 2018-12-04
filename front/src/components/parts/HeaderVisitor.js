@@ -38,6 +38,14 @@ export default class MenuExampleHeader extends Component {
 
         return (
             <Menu>
+                <Menu.Item
+                as={NavLink}
+                to="/welcome"
+                activeClassName="active"
+                >
+                Welcome
+                </Menu.Item>
+
                 <Menu.Menu
                 position="right"
                 >

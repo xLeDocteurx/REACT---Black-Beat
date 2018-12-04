@@ -12,6 +12,7 @@ import './App.css'
 // import users from './json/users.json'
 
 // Les pages de  l'application
+import Welcome from './pages/Welcome'
 import LoginForm from './pages/LoginForm'
 import RegisterForm from './pages/RegisterForm'
 import DAO from './pages/DAO'
@@ -54,6 +55,8 @@ class App extends Component {
         )}
 
 
+        {/* <Route path="/" component={Welcome} /> */}
+        <Route path="/welcome" component={Welcome} />
         <Route path="/dao" component={DAO} />
         <Route path="/profile" component={Profile} />
         <Route path="/register" component={RegisterForm} />

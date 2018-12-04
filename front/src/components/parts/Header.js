@@ -41,6 +41,13 @@ export default class Header extends Component {
         return (
         <Menu attached="top">
             {/* <s inverted> */}
+                <Menu.Item
+                as={NavLink}
+                to="/welcome"
+                activeClassName="active"
+                >
+                Welcome
+                </Menu.Item>
             <Dropdown item text="File">
                 <Dropdown.Menu>
                     
@@ -108,7 +115,7 @@ export default class Header extends Component {
             <Menu.Item
             name="Help"
             as={NavLink}
-            to="https://github.com/xLeDocteurx/REACT---Black-Beat"
+            href="https://github.com/xLeDocteurx/REACT---Black-Beat"
             // activeClassName="active"
             target="_BLANK"
             // position="right"

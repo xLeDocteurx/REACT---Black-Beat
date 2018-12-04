@@ -41,6 +41,8 @@ export default class Profile extends Component {
             </a>
         )
 
+        const user_image = this.state.user.avatar
+
         return (
             <Segment>
 
