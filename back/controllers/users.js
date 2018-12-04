@@ -11,6 +11,7 @@ const checkAuth = require('../middleware/checkAuth')
 // Voir voir le profil de l'utilisateur courant
 router.get('/me', checkAuth, (req, res) => {
     // if(!req.user) { res.status(400).json(req) }
+    console.log('requette sur la route "/users/me"')
     res.json(req.user)
 })
 

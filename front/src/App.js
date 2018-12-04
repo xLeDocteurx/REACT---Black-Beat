@@ -33,14 +33,15 @@ class App extends Component {
     }
   }
   
-  componentWillMount() {
-      console.log('componentWillMount : App')
-      const jwt = JSON.parse(sessionStorage.getItem('jwt'))
-      if(sessionStorage.getItem('jwt')){
-          this.setState({jwt:jwt})
-      }
-      
-  }
+  // componentWillMount() {
+  //     console.log('componentWillMount : App')
+  //     const jwt = sessionStorage.getItem('jwt')
+  //     console.log('jwt')
+  //     console.log(jwt)
+  //     if(sessionStorage.getItem('jwt')){
+  //         this.setState({jwt:jwt})
+  //     }
+  // }
   
   render() {
     

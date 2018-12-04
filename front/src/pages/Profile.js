@@ -11,19 +11,21 @@ export default class Profile extends Component {
         super(props)
 
         this.state = {
-
+            user: null
         }
     }
 
     componentWillMount() {
         console.log('componentWillMount : Profile')
-        const jwt = JSON.parse(sessionStorage.getItem('jwt'))
+        const jwt = sessionStorage.getItem('jwt')
 
-        axios({method: 'get',
+        axios({
+            method: 'get',
             url:'http://localhost:3001/users/me',
             headers: {Authorization: jwt}})
             .then(response => {
-                console.log(response)
+                this.setState({user: response.data})
+                console.log(response.data)
             })
             .catch(err => {
                 console.log(err)
@@ -44,6 +46,7 @@ export default class Profile extends Component {
 
                 <Grid centered>
                     <Grid.Column width={3}>
+                    
                         <Card
                         fluid
                         image='/autop.jpg'

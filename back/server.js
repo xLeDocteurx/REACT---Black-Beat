@@ -31,7 +31,9 @@ app.use(bodyParser.json())
 app.use(cookieparser())
 // app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.static("public"))
-app.use(cors())
+app.use(cors({
+    exposedHeaders: ['Authorization'],
+  }))
 
 const index = require('./controllers/index')
 app.use('/', index)
