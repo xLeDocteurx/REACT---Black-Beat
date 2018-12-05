@@ -32,14 +32,14 @@ export default class Projects extends Component {
         // Remplacer ceci par un call au store de redux
         axios({
             method: 'get',
-            url:'http://localhost:3001/users/me',
+            url:'http://127.0.0.1:3001/users/me',
             headers: {Authorization: jwt}})
             .then(response => {
                 this.setState({user: response.data})
 
                 axios({
                     method: 'get',
-                    url:`http://localhost:3001/users/${this.state.user.id}/projects`,
+                    url:`http://127.0.0.1:3001/users/${this.state.user.id}/projects`,
                     headers: {Authorization: jwt}})
                     .then(response => {
                         this.setState({projects: response.data})
@@ -51,7 +51,7 @@ export default class Projects extends Component {
 
                 axios({
                     method: 'get',
-                    url:`http://localhost:3001/users/${this.state.user.id}/collaborations`,
+                    url:`http://127.0.0.1:3001/users/${this.state.user.id}/collaborations`,
                     headers: {Authorization: jwt}})
                     .then(response => {
                         this.setState({collaborations: response.data})

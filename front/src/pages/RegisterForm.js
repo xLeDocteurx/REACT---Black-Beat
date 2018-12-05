@@ -37,7 +37,7 @@ class RegisterForm extends Component {
             "currentProjectId": 1
         }
 
-        axios.post('http://localhost:3001/users', {user})
+        axios.post('http://127.0.0.1:3001/users', {user})
             .then(response => {
                 console.table(response.data)
                 window.location.replace("/profile")

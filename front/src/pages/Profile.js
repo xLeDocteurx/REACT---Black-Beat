@@ -28,7 +28,7 @@ export default class Profile extends Component {
 
         axios({
             method: 'get',
-            url:'http://localhost:3001/users/me',
+            url:'http://127.0.0.1:3001/users/me',
             headers: {Authorization: jwt}})
             .then(response => {
                 this.setState({user: response.data})

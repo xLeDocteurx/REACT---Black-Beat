@@ -34,7 +34,7 @@ class LoginForm extends Component {
             "email": this.state.email,
             "password": this.state.password
         }
-        axios.post('http://localhost:3001/auth/login', {user})
+        axios.post('http://127.0.0.1:3001/auth/login', {user})
             .then(response => {
                 sessionStorage.setItem('jwt', response.headers.authorization)
                 window.location.replace("/profile")
