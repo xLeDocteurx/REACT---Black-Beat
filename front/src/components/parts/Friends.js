@@ -22,21 +22,14 @@ export default class Friends extends Component {
     render() {
 
         return (
-            <Card fluid>
+            <Segment>
             {this.state.isLoading &&
                 <Dimmer active inverted>
                     <Loader/>
                 </Dimmer>
             }
-                <Card.Content>
-                    <Card.Content>
-                    <Card.Header>Your friends</Card.Header>
-                    </Card.Content>
-                    <Card.Content>
-                        
-                    </Card.Content>
-                </Card.Content>
-            </Card>
+                <h2>Your friends</h2>
+            </Segment>
         )
     }
 }

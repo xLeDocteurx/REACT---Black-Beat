@@ -15,7 +15,7 @@ module.exports = {
             email: 'admin@gmail.com',
             password: hash,
             avatar: './avatar.jpg',
-            bio: 'Admin is hot and dangerous !',
+            bio: 'Admin did not fill their resume... yet',
             'createdAt': '2018-11-23 17:00:35',
             'updatedAt': '2018-11-23 17:00:35',
             'currentProjectId': 1
@@ -26,7 +26,7 @@ module.exports = {
             email: 'ledocteur@gmail.com',
             password: hash,
             avatar: './avatar.jpg',
-            bio: 'LeDocteur is hot and dangerous !',
+            bio: 'LeDocteur did not fill his resume',
             'createdAt': '2018-11-23 17:00:35',
             'updatedAt': '2018-11-23 17:00:35',
             'currentProjectId': 1
@@ -37,7 +37,7 @@ module.exports = {
             email: 'toto@gmail.com',
             password: hash,
             avatar: './avatar.jpg',
-            bio: 'Toto is hot and dangerous !',
+            bio: 'Toto did not fill his resume',
             'createdAt': '2018-11-23 17:00:35',
             'updatedAt': '2018-11-23 17:00:35',
             'currentProjectId': 1

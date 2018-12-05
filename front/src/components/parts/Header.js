@@ -1,19 +1,19 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 import { NavLink } from "react-router-dom"
 import { 
     // Image,
     Dropdown, Menu, 
     // Divider
-    } from "semantic-ui-react";
+    } from "semantic-ui-react"
 
-import NewModal from "../modals/NewModal";
-import LoadModal from "../modals/LoadModal";
+import NewModal from "../modals/NewModal"
+import LoadModal from "../modals/LoadModal"
 
-import './Header.css';
+import './Header.css'
 
 export default class Header extends Component {
 
-    // state = {};
+    // state = {}
 
     constructor (props) {
         super(props)
@@ -24,36 +24,46 @@ export default class Header extends Component {
 
     }
     
-    // handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+    // handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
     // handleSubmit = () => {
     //     const { title, about } = this.state
 
     //     this.setState({ submittedTitle: title, submittedAbout: about })
 
-    //     // DB.newProject();
+    //     // DB.newProject()
     // }
 
     render() {
-        // const { activeItem } = this.state;
-        // let saveProjects = DB.saveProjects();
+        // const { activeItem } = this.state
+        // let saveProjects = DB.saveProjects()
 
         return (
-        <Menu attached="top">
-            {/* <s inverted> */}
-                <Menu.Item
-                as={NavLink}
-                to="/welcome"
-                activeClassName="active"
-                >
-                Welcome
-                </Menu.Item>
-            <Dropdown item text="File">
+        <Menu>
+            {/* <Menu.Item
+            as={NavLink}
+            to="/welcome"
+            activeClassName="active"
+            >
+            Welcome
+            </Menu.Item> */}
+
+            <Dropdown item text="Project">
                 <Dropdown.Menu>
                     
                     {/* <NewModal /> */}
 
                     {/* <LoadModal projects={this.state.projects}/> */}
+
+                    <Dropdown.Item 
+                        as={NavLink}
+                        to="/project"
+                        // activeClassName="active"
+                        text='Show'
+                        // description='ctrl + s' 
+                        icon='eye'
+                        // onClick={this.showProject}
+                    />
 
                     <Dropdown.Item 
                         // as="{NavLink}"
@@ -110,12 +120,10 @@ export default class Header extends Component {
             </Dropdown.Menu>
             </Dropdown> */}
 
-            {this.state.jwt}
-
             <Menu.Item
             name="Help"
             as={NavLink}
-            href="https://github.com/xLeDocteurx/REACT---Black-Beat"
+            to="https://github.com/xLeDocteurx/REACT---Black-Beat"
             // activeClassName="active"
             target="_BLANK"
             // position="right"
@@ -127,33 +135,32 @@ export default class Header extends Component {
             // className="centered" 
                 header>{this.state.currentProject.title}
             </Menu.Item> */}
-                <Menu.Menu
-                position="right"
+            <Menu.Menu
+            position="right"
+            >
+                <Dropdown
+                item
+                text="LeDocteur"
                 >
-                    <Dropdown
-                    item
-                    text="LeDocteur"
-                    >
-                    {/* <Image src={this.state.currentUser.avatar} alt="User Avatar" avatar /> */}
-                        <Dropdown.Menu>
-                            <Dropdown.Item
-                            text="Profile"
-                            as={NavLink}
-                            to="/profile"
-                            // activeClassName="active"
-                            />
-                            <Dropdown.Item
-                            text="Log Out"
-                            as={NavLink}
-                            to="/logout"
-                            // activeClassName="active"
-                            />
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </Menu.Menu>
+                    <Dropdown.Menu>
+                        <Dropdown.Item
+                        text="Profile"
+                        as={NavLink}
+                        to="/profile"
+                        // activeClassName="active"
+                        />
+                        <Dropdown.Item
+                        text="Log Out"
+                        as={NavLink}
+                        to="/logout"
+                        // activeClassName="active"
+                        />
+                    </Dropdown.Menu>
+                </Dropdown>
+            </Menu.Menu>
 
 
         </Menu>
-        );
+        )
     }
 }

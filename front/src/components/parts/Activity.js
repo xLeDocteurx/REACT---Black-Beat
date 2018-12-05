@@ -22,17 +22,13 @@ export default class Activity extends Component {
     render() {
 
         return (
-            <Card fluid>
+            <Segment>
             {this.state.isLoading &&
                 <Dimmer active inverted>
                     <Loader/>
                 </Dimmer>
             }
-                <Card.Content>
-                    <Card.Content>
-                    <Card.Header>Recent activity</Card.Header>
-                    </Card.Content>
-                    <Card.Content>
+                    <h2>Recent activity</h2>
                     <Feed>
                         <Feed.Event>
                         <Feed.Label image="./avatar.jpg" />
@@ -64,9 +60,7 @@ export default class Activity extends Component {
                         </Feed.Content>
                         </Feed.Event>
                     </Feed>
-                    </Card.Content>
-                </Card.Content>
-            </Card>
+            </Segment>
         )
     }
 }

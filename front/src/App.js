@@ -14,6 +14,7 @@ import './App.css'
 // Les pages de  l'application
 import Welcome from './pages/Welcome'
 import LoginForm from './pages/LoginForm'
+import LogOut from './pages/LogOut'
 import RegisterForm from './pages/RegisterForm'
 import DAO from './pages/DAO'
 
@@ -29,20 +30,20 @@ class App extends Component {
 
     this.state = {
       jwt: null,
-      isLoggedIn: false,
+      // isLoggedIn: false,
+      // isLoading: false,
       currentUser: null
     }
   }
   
-  // componentWillMount() {
-  //     console.log('componentWillMount : App')
-  //     const jwt = sessionStorage.getItem('jwt')
-  //     console.log('jwt')
-  //     console.log(jwt)
-  //     if(sessionStorage.getItem('jwt')){
-  //         this.setState({jwt:jwt})
-  //     }
-  // }
+  componentWillMount() {
+      console.log('componentWillMount : App')
+      // console.log('jwt')
+      // console.log(jwt)
+      if(sessionStorage.getItem('jwt')){
+        this.setState({isLoggedIn: true})
+      }
+  }
   
   render() {
     
@@ -57,10 +58,11 @@ class App extends Component {
 
         {/* <Route path="/" component={Welcome} /> */}
         <Route path="/welcome" component={Welcome} />
-        <Route path="/dao" component={DAO} />
-        <Route path="/profile" component={Profile} />
         <Route path="/register" component={RegisterForm} />
         <Route path="/login" component={LoginForm} />
+        <Route path="/logout" component={LogOut} />
+        <Route path="/profile" component={Profile} />
+        <Route path="/project" component={DAO} />
 
       </div>
     )

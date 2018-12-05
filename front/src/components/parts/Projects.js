@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Header, Segment, Grid, Card, Feed, Dimmer, Loader, Icon } from 'semantic-ui-react'
+import { Header, Segment, List, Image, Grid, Card, Feed, Dimmer, Loader, Icon } from 'semantic-ui-react'
 import axios from 'axios'
 // import checkToken from './checkToken.js'
 
@@ -12,8 +12,16 @@ export default class Projects extends Component {
 
         this.state = {
             isLoading: true,
+            isLoadingForCollaborations: true,
             projects: []
         }
+
+        // this.loadProject = this.loadProject.bind(this)
+    }
+
+    loadProject(id, event){
+        console.log(`Loading project : ${id}`)
+        window.location.replace("/project")
     }
 
     componentWillMount() {
@@ -36,31 +44,39 @@ export default class Projects extends Component {
     render() {
 
         return (
-            <Card fluid>
-            {this.state.isLoading &&
-                <Dimmer active inverted>
-                    <Loader/>
-                </Dimmer>
-            }
-                <Card.Content>
-                    <Card.Content>
-                    <Card.Header>Your projects</Card.Header>
-                    </Card.Content>
-                    <Card.Content>
-
-                        {!this.state.isLoading &&
-                            <div>
-                                {this.state.projects.map((project, key) => {
-                                    return <div>
-                                    {project.id} : {project.name}
-                                    </div>
-                                })}
-                            </div>
-                        }
-
-                    </Card.Content>
-                </Card.Content>
-            </Card>
+            <Segment>
+                <Segment>
+                    {this.state.isLoading &&
+                        <Dimmer active inverted>
+                            <Loader/>
+                        </Dimmer>
+                    }
+                    <h2>Your projects</h2>
+                    {!this.state.isLoading &&
+                        <List selection verticalAlign='middle'>
+                            {this.state.projects.map((project, key) => {
+                                return (
+                                    <List.Item key={project.id} onClick={(e) => this.loadProject(project.id, e)}>
+                                        {/* <Image avatar src='/images/avatar/small/helen.jpg' /> */}
+                                        <Icon name="file"/>
+                                        <List.Content>
+                                            {project.name}
+                                        </List.Content>
+                                    </List.Item>
+                                )
+                            })}
+                        </List>
+                    }
+                </Segment>
+                <Segment>
+                    {this.state.isLoadingForCollaborations &&
+                        <Dimmer active inverted>
+                            <Loader/>
+                        </Dimmer>
+                    }
+                    <h2>Collaborations</h2>
+                </Segment>
+            </Segment>
         )
     }
 }

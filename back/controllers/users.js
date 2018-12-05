@@ -130,7 +130,7 @@ router.post('/', (req, res) => {
                     email: req_user.email,
                     password: hash,
                     avatar: './avatar.jpg',
-                    bio: `${req_user.username} is hot and dangerous !`,
+                    bio: `${req_user.username} did not fill their resume... yet !`,
                     currentProjectId: 1
                 })
 
