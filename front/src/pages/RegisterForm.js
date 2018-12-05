@@ -55,11 +55,11 @@ class RegisterForm extends Component {
             <Grid centered>
                 <Grid.Column width={8}>
                     <Segment>
-                        {this.state.isLoading ? (
+                        {this.state.isLoading &&
                             <Dimmer active inverted>
                                 <Loader/>
                             </Dimmer>
-                        ) : ('')}
+                        }
                         <h1>Register</h1>
                         <Form 
                         // loading

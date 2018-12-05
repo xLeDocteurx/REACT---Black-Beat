@@ -1,9 +1,13 @@
 import React, { Component } from "react"
-import { Segment, Grid, Card, Feed, Icon } from 'semantic-ui-react'
+import { Segment, Grid, Card, Tab, Feed, Dimmer, Loader, Icon } from 'semantic-ui-react'
 import axios from 'axios'
 // import checkToken from './checkToken.js'
 
 import './Profile.css'
+
+import Projects from '../components/parts/Projects'
+import Activity from '../components/parts/Activity'
+import Friends from '../components/parts/Friends'
 
 export default class Profile extends Component {
 
@@ -11,7 +15,10 @@ export default class Profile extends Component {
         super(props)
 
         this.state = {
-            user: null
+            // user: null
+            isLoading: true,
+            user: {},
+            activity: {},
         }
     }
 
@@ -25,7 +32,7 @@ export default class Profile extends Component {
             headers: {Authorization: jwt}})
             .then(response => {
                 this.setState({user: response.data})
-                console.log(response.data)
+                this.setState({isLoading: false})
             })
             .catch(err => {
                 console.log(err)
@@ -41,64 +48,33 @@ export default class Profile extends Component {
             </a>
         )
 
-        const user_image = this.state.user.avatar
+        const panes = [
+            {menuItem:'Projects', render: () => <Tab.Pane><Projects/></Tab.Pane>},
+            {menuItem:'Activity', render: () => <Tab.Pane><Activity/></Tab.Pane>},
+            {menuItem:'Friends', render: () => <Tab.Pane><Friends/></Tab.Pane>}
+        ]
 
         return (
             <Segment>
-
                 <Grid centered>
                     <Grid.Column width={3}>
-                    
+                        {this.state.isLoading &&
+                            <Dimmer active inverted>
+                                <Loader/>
+                            </Dimmer>
+                        }
+                        
                         <Card
-                        fluid
-                        image='/autop.jpg'
-                        header='LeDocteur'
+                        // fluid
+                        image={this.state.user.avatar}
+                        header={this.state.user.username}
                         meta='Friend'
-                        description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
+                        description={this.state.user.bio}
                         extra={extra}
                         />
                     </Grid.Column>
                     <Grid.Column width={10}>
-                        <Card fluid>
-                            <Card.Content>
-                                <Card.Content>
-                                <Card.Header>Recent Activity</Card.Header>
-                                </Card.Content>
-                                <Card.Content>
-                                <Feed>
-                                    <Feed.Event>
-                                    <Feed.Label image='./autop.jpg' />
-                                    <Feed.Content>
-                                        <Feed.Date content='1 day ago' />
-                                        <Feed.Summary>
-                                        You added <a>Jenny Hess</a> as a friend.
-                                        </Feed.Summary>
-                                    </Feed.Content>
-                                    </Feed.Event>
-
-                                    <Feed.Event>
-                                    <Feed.Label image='./autop.jpg' />
-                                    <Feed.Content>
-                                        <Feed.Date content='3 days ago' />
-                                        <Feed.Summary>
-                                        You created a new project <a>Boleros</a>
-                                        </Feed.Summary>
-                                    </Feed.Content>
-                                    </Feed.Event>
-
-                                    <Feed.Event>
-                                    <Feed.Label image='./autop.jpg' />
-                                    <Feed.Content>
-                                        <Feed.Date content='4 days ago' />
-                                        <Feed.Summary>
-                                        You added <a>Elliot Baker</a> as a friend.
-                                        </Feed.Summary>
-                                    </Feed.Content>
-                                    </Feed.Event>
-                                </Feed>
-                                </Card.Content>
-                            </Card.Content>
-                        </Card>
+                        <Tab panes={panes}/>
                     </Grid.Column>
                 </Grid>
 

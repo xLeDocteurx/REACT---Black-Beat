@@ -52,11 +52,11 @@ class LoginForm extends Component {
             <Grid centered>
                 <Grid.Column width={8}>
                     <Segment>
-                        {this.state.isLoading ? (
+                        {this.state.isLoading &&
                             <Dimmer active inverted>
                                 <Loader/>
                             </Dimmer>
-                        ) : ('')}
+                        }
                         <h1>Log In</h1>
                         <Form
                         // loading

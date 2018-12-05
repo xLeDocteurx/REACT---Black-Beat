@@ -97,10 +97,9 @@ router.get('/:user_id', (req, res) => {
 })
 
 //OK
-// Voir UN utilisateur
+// Voir les projets d'un utilisateur
 router.get('/:user_id/projects', (req, res) => {
     const user_id = ent.encode(req.params.user_id)
-
     // models.User.findById(user_id)
     models.User.findByPk(user_id)
         .then((user) => {
@@ -111,7 +110,7 @@ router.get('/:user_id/projects', (req, res) => {
             })
         })
         .catch((e) => {
-            res.status(400).send(e)
+            // res.status(400).send(e)
         })
 })
 
@@ -130,7 +129,7 @@ router.post('/', (req, res) => {
                     username: req_user.email.split('@')[0],
                     email: req_user.email,
                     password: hash,
-                    avatar: './autop.png',
+                    avatar: './avatar.jpg',
                     bio: `${req_user.username} is hot and dangerous !`,
                     currentProjectId: 1
                 })
