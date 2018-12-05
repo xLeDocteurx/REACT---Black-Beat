@@ -39,6 +39,7 @@ export default class MenuExampleHeader extends Component {
         return (
             <Menu>
                 <Menu.Item
+                header
                 as={NavLink}
                 to="/welcome"
                 activeClassName="active"
