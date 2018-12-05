@@ -73,7 +73,10 @@ router.get('/:user_id', (req, res) => {
     // models.User.findById(user_id)
     models.User.findByPk(user_id)
         .then((user) => {
+            console.log('user')
+            console.log(user)
             if (!user) res.send(`This is the Black Beat API // YOU ARE NOT READING USER // ${user_id}`)
+            console.log('user')
             
             user.getProjects().then(projects => {
                 user.dataValues.projects = projects
