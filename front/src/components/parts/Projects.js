@@ -13,7 +13,8 @@ export default class Projects extends Component {
         this.state = {
             isLoading: true,
             isLoadingForCollaborations: true,
-            projects: []
+            projects: [],
+            collaborations: []
         }
 
         // this.loadProject = this.loadProject.bind(this)
@@ -25,20 +26,45 @@ export default class Projects extends Component {
     }
 
     componentWillMount() {
+        console.log('componentWillMount : Projects')
         const jwt = sessionStorage.getItem('jwt')
+
+        // Remplacer ceci par un call au store de redux
         axios({
             method: 'get',
-            url:`http://localhost:3001/users/${'2'}/projects`,
+            url:'http://localhost:3001/users/me',
             headers: {Authorization: jwt}})
             .then(response => {
-                this.setState({projects: response.data})
-                this.setState({isLoading: false})
-                // console.log(typeof(this.state.projects))
-                // console.log(Object.values(this.state.projects).map(e => {return e}))
+                this.setState({user: response.data})
+
+                axios({
+                    method: 'get',
+                    url:`http://localhost:3001/users/${this.state.user.id}/projects`,
+                    headers: {Authorization: jwt}})
+                    .then(response => {
+                        this.setState({projects: response.data})
+                        this.setState({isLoading: false})
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+
+                axios({
+                    method: 'get',
+                    url:`http://localhost:3001/users/${this.state.user.id}/collaborations`,
+                    headers: {Authorization: jwt}})
+                    .then(response => {
+                        this.setState({collaborations: response.data})
+                        this.setState({isLoadingForCollaborations: false})
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
             })
             .catch(err => {
                 console.log(err)
             })
+
     }
 
     render() {
@@ -75,6 +101,21 @@ export default class Projects extends Component {
                         </Dimmer>
                     }
                     <h2>Collaborations</h2>
+                    {!this.state.isLoadingForCollaborations &&
+                        <List selection verticalAlign='middle'>
+                            {this.state.collaborations.map((project, key) => {
+                                return (
+                                    <List.Item key={project.id} onClick={(e) => this.loadProject(project.id, e)}>
+                                        {/* <Image avatar src='/images/avatar/small/helen.jpg' /> */}
+                                        <Icon name="file"/>
+                                        <List.Content>
+                                            {project.name}
+                                        </List.Content>
+                                    </List.Item>
+                                )
+                            })}
+                        </List>
+                    }
                 </Segment>
             </Segment>
         )

@@ -40,7 +40,8 @@ class LoginForm extends Component {
                 window.location.replace("/profile")
             })
             .catch(err => {
-                alert(err.response.data)
+                // alert(err.response.data)
+                alert(err)
                 window.location.replace("/login")
             })
         event.preventDefault()

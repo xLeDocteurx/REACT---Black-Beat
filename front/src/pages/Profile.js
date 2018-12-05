@@ -49,7 +49,7 @@ export default class Profile extends Component {
         )
 
         const panes = [
-            {menuItem:'Projects', render: () => <Tab.Pane><Projects/></Tab.Pane>},
+            {menuItem:'Projects', render: () => <Tab.Pane><Projects userId={this.state.user.id}/></Tab.Pane>},
             {menuItem:'Activity', render: () => <Tab.Pane><Activity/></Tab.Pane>},
             {menuItem:'Friends', render: () => <Tab.Pane><Friends/></Tab.Pane>}
         ]

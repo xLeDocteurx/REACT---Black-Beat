@@ -4,16 +4,10 @@ const jwt = require('jsonwebtoken')
 
 let checkAuth = (req, res, next) => {
 
-  console.log('la requette passe par le middleware checkAuth')
-
   const token = req.header('Authorization')
-  console.log('avec un token :')
-  console.log(token)
-
 
   jwt.verify(token, serverConfig.jwt.secret, function(err, decoded) {
-    if(err){res.status(401).send()}
-    console.log(decoded) // bar
+    if(err){res.status(401).send(err)}
 
     models.User.findAll({
       where: {
@@ -25,7 +19,7 @@ let checkAuth = (req, res, next) => {
         next()
       })
       .catch((e) => {
-        res.status(401).send()
+        res.status(401).send(e)
       })
   })
 }

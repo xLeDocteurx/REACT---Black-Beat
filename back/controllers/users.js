@@ -110,7 +110,31 @@ router.get('/:user_id/projects', (req, res) => {
             })
         })
         .catch((e) => {
-            // res.status(400).send(e)
+            res.status(401).send(e)
+        })
+})
+
+//OK
+// Voir les collaborations d'un utilisateur
+router.get('/:user_id/collaborations', (req, res) => {
+    const user_id = ent.encode(req.params.user_id)
+    // models.User.findById(user_id)
+    models.User.findByPk(user_id)
+        .then((user) => {
+            if (!user) res.send(`This is the Black Beat API // YOU ARE NOT READING USER // ${user_id} // PROJECTS`)
+
+            user.getContributions()
+                .then(projects => {
+                    // projects.forEach(project => {
+                    //     project.getAuthor().then((author) =>{
+                    //         project.dataValues.authorName = author.username
+                    //     })
+                    // })
+                    res.json(projects)
+                })
+        })
+        .catch((e) => {
+            res.status(401).send(e)
         })
 })
 
