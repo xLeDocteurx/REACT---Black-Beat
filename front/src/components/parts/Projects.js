@@ -13,6 +13,7 @@ export default class Projects extends Component {
         this.state = {
             isLoading: true,
             isLoadingForCollaborations: true,
+            user: {},
             projects: [],
             collaborations: []
         }
@@ -22,7 +23,20 @@ export default class Projects extends Component {
 
     loadProject(id, event){
         console.log(`Loading project : ${id}`)
-        window.location.replace("/project")
+        const jwt = sessionStorage.getItem('jwt')
+        const user = this.state.user
+        user.currentProjectId = id
+        this.setState({currentProjectId: id})
+        axios({
+            method: 'put',
+            url: 'http://127.0.0.1:3001/users/me',
+            headers: {Authorization: jwt},
+            data: {user: user}})
+        .then(responser => {
+            console.log('yeah')
+            // window.location.replace("/profile")
+            window.location.replace("/project")
+        })
     }
 
     componentWillMount() {
@@ -36,7 +50,7 @@ export default class Projects extends Component {
             headers: {Authorization: jwt}})
             .then(response => {
                 this.setState({user: response.data})
-
+                console.log(this.state.user)
                 axios({
                     method: 'get',
                     url:`http://127.0.0.1:3001/users/${this.state.user.id}/projects`,
@@ -86,7 +100,14 @@ export default class Projects extends Component {
                                         {/* <Image avatar src='/images/avatar/small/helen.jpg' /> */}
                                         <Icon name="file"/>
                                         <List.Content>
-                                            {project.name}
+                                            {this.state.user.currentProjectId == project.id ? (
+                                                <span>{project.name}
+                                                <div className="ui left pointing label">
+                                                    Current project
+                                                </div></span>
+                                            ) : (
+                                                <span>{project.name}</span>
+                                            )}
                                         </List.Content>
                                     </List.Item>
                                 )
@@ -109,7 +130,14 @@ export default class Projects extends Component {
                                         {/* <Image avatar src='/images/avatar/small/helen.jpg' /> */}
                                         <Icon name="file"/>
                                         <List.Content>
-                                            {project.name}
+                                            {this.state.user.currentProjectId == project.id ? (
+                                                <span>{project.name}
+                                                <div className="ui left pointing label">
+                                                    Current project
+                                                </div></span>
+                                            ) : (
+                                                <span>{project.name}</span>
+                                            )}
                                         </List.Content>
                                     </List.Item>
                                 )

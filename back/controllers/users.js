@@ -178,34 +178,32 @@ router.post('/', (req, res) => {
 
 // OK
 // Actualiser un utilisateur
-router.put('/:user_id', (req, res) => {
-// router.patch('/:user_id', (req, res) => {
-    const req_user =  req.body.user
-    const user_id = ent.encode(req.params.user_id)
+router.put('/me', checkAuth, (req, res) => {
+    // router.put('/:user_id', (req, res) => {
+    // router.patch('/:user_id', (req, res) => {
+        const req_user =  req.body.user
+        const user_id = req_user.id
 
-    bcrypt.genSalt( serverConfig.bcrypt.saltRounds, (err, salt) => {
-        bcrypt.hash(req_user.password, salt)
-            .then((hash) => {
-                models.User.findByPk(user_id)
-                    .then((user) => {
-                        if (!user) res.send(`This is the Black Beat API // YOU ARE NOT UPDATING USER // ${user_id}`)
-                        
-                        user.update({
-                            active: req_user.active,
-                            username: req_user.username,
-                            email: req_user.email,
-                            password: hash,
-                            avatar: '../public/autop.png',
-                            bio: req_user.bio,
-                            currentProjectId: req_user.currentProjectId
-                        })
-                            .then(
-                                res.send(user)
-                            )
-                            .catch((e) => {
-                                res.status(400).send(e)
-                            })
-                    })
+                console.log('req_user.avatar')
+        // bcrypt.genSalt( serverConfig.bcrypt.saltRounds, (err, salt) => {
+        //     bcrypt.hash(req_user.password, salt)
+        //         .then((hash) => {
+            models.User.findByPk(user_id)
+            .then((user) => {
+                if (!user) res.send(`This is the Black Beat API // YOU ARE NOT UPDATING USER // ${user_id}`)
+
+                user.update({
+                    active: req_user.active,
+                    username: req_user.username,
+                    email: req_user.email,
+                    password: req_user.password,
+                    avatar: req_user.avatar,
+                    bio: req_user.bio,
+                    currentProjectId: req_user.currentProjectId
+                })
+                    .then(
+                        res.send(user)
+                    )
                     .catch((e) => {
                         res.status(400).send(e)
                     })
@@ -213,7 +211,11 @@ router.put('/:user_id', (req, res) => {
             .catch((e) => {
                 res.status(400).send(e)
             })
-    })
+    //         })
+    //         .catch((e) => {
+    //             res.status(400).send(e)
+    //         })
+    // })
 })
 
 // Désactiver un utilisateur

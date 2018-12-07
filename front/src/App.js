@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { Route } from "react-router"
+import Redux from 'redux'
 import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import { Route } from "react-router"
 // import { Menu } from 'semantic-ui-react'
 
 // import logo from './logo.svg'
@@ -16,7 +18,7 @@ import Welcome from './pages/Welcome'
 import LoginForm from './pages/LoginForm'
 import LogOut from './pages/LogOut'
 import RegisterForm from './pages/RegisterForm'
-import DAO from './pages/DAO'
+import Project from './pages/Project'
 
 // Les parts de l'application
 import Header from './components/parts/Header'
@@ -30,18 +32,16 @@ class App extends Component {
 
     this.state = {
       jwt: null,
-      // isLoggedIn: false,
+      isLoggedIn: false,
       // isLoading: false,
-      currentUser: null
+      // currentUser: null
     }
   }
   
   componentWillMount() {
-      console.log('componentWillMount : App')
-      // console.log('jwt')
-      // console.log(jwt)
+      
       if(sessionStorage.getItem('jwt')){
-        this.setState({isLoggedIn: true})
+        this.setState({jwt: sessionStorage.getItem('jwt'), isLoggedIn: true})
       }
   }
   
@@ -49,12 +49,7 @@ class App extends Component {
     
     return (
       <div>
-        {this.state.isLoggedIn ? (
-          <Header/>
-        ) : (
-          <HeaderVisitor/>
-        )}
-
+        {this.state.isLoggedIn ? ( <Header/> ) : ( <HeaderVisitor/> )}
 
         {/* <Route path="/" component={Welcome} /> */}
         <Route path="/welcome" component={Welcome} />
@@ -62,7 +57,7 @@ class App extends Component {
         <Route path="/login" component={LoginForm} />
         <Route path="/logout" component={LogOut} />
         <Route path="/profile" component={Profile} />
-        <Route path="/project" component={DAO} />
+        <Route path="/project" component={Project} />
 
       </div>
     )

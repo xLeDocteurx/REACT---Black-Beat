@@ -42,10 +42,15 @@ export default class Profile extends Component {
     render() {
 
         const extra = (
-            <a>
-                <Icon name='user' />
-                16 Friends
-            </a>
+            <div>
+                <a>
+                    <Icon name='user' />
+                    16 Friends
+                </a>
+                <div>
+                    Current project : {this.state.user.currentProjectId}
+                </div>
+            </div>
         )
 
         const panes = [

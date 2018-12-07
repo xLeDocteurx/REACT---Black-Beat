@@ -4,38 +4,34 @@ import {
   // Grid, Container, Segments, Segment 
 } from 'semantic-ui-react';
 
-// import axios from 'axios'
+import axios from 'axios'
 
-import "./DAO.css";
+import "./Project.css";
 
 // import Footer from './components/parts/Footer';
 // import Track from './components/parts/Track';
 
 // import { User, Project, Track } from './Interfaces.ts';
 
-class DAO extends Component {
+class Project extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-
-    };
-
-    this.addProject = this.addProject.bind(this);
-    this.removeProject = this.removeProject.bind(this);
+      project: {}
+    }
   }
 
-  addProject(title) {
-    // let id = this.state.projects[this.state.projects.length - 1].id + 1;
-    // let owner = this.state.currentUser.email;
+  componentWillMount() {
 
-    this.setState({
-      // projects: [...this.state.projects, new Project(id, title, owner)]
-    });
-  }
-
-  removeProject(project) {
-    this.setState({ projects: this.state.projects.filter(t => t !== project) });
+    const jwt = sessionStorage.getItem('jwt')
+    axios({
+      method: 'get',
+      url: 'http://127.0.0.1:3001/users/me',
+      headers: {Authorization: jwt}})
+      .then(response => {
+        this.setState({project: response.data})
+      })
   }
 
   render() {
@@ -80,4 +76,4 @@ class DAO extends Component {
 
 }
 
-export default DAO;
+export default Project;

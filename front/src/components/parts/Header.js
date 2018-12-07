@@ -140,7 +140,7 @@ export default class Header extends Component {
             >
                 <Dropdown
                 item
-                text="LeDocteur"
+                text={'this.props.user.username'}
                 >
                     <Dropdown.Menu>
                         <Dropdown.Item
