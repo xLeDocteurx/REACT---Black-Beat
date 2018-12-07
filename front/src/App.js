@@ -3,15 +3,9 @@ import Redux from 'redux'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { Route } from "react-router"
-// import { Menu } from 'semantic-ui-react'
 
 // import logo from './logo.svg'
 import './App.css'
-
-// import firebase from 'firebase'
-// import core from './json/core.json'
-// import projects from './json/projects.json'
-// import users from './json/users.json'
 
 // Les pages de  l'application
 import Welcome from './pages/Welcome'
