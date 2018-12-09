@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import Redux from 'redux'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+// import Redux from 'redux'
+// import { createStore } from 'redux'
+// import { Provider } from 'react-redux'
+import { connect } from 'react-redux'
+// import store from './redux/store'
 import { Route } from "react-router"
 
 // import logo from './logo.svg'
@@ -38,11 +40,23 @@ class App extends Component {
         this.setState({jwt: sessionStorage.getItem('jwt'), isLoggedIn: true})
       }
   }
+
+  // inc(){
+  //   this.props.store.dispatch({ type: 'INCREMENT' })
+  //   console.log(this.props.store.getState())
+  // }
+  
+  // dec(){
+  //   this.props.store.dispatch({ type: 'DECREMENT' })
+  // }
   
   render() {
     
     return (
-      <div>
+      <div>      
+        {/* <div><button onClick={this.dec()}>-</button></div>
+        <div><button onClick={this.inc()}>+</button></div>
+        <div>{this.props.store.getState()}</div> */}
         {this.state.isLoggedIn ? ( <Header/> ) : ( <HeaderVisitor/> )}
 
         {/* <Route path="/" component={Welcome} /> */}
