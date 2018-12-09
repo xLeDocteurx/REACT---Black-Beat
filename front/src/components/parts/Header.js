@@ -6,8 +6,8 @@ import {
     // Divider
     } from "semantic-ui-react"
 
-import NewModal from "../modals/NewModal"
-import LoadModal from "../modals/LoadModal"
+// import NewModal from "../modals/NewModal"
+// import LoadModal from "../modals/LoadModal"
 
 import './Header.css'
 

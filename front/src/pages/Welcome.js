@@ -1,7 +1,9 @@
 import React, { Component } from "react"
 import { 
   // List,
-  Grid, Container, Header, Segment 
+  Grid,
+  // Container,
+  Header, Segment 
 } from 'semantic-ui-react'
 
 // import axios from 'axios'

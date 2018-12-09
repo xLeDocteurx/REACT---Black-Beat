@@ -37,13 +37,20 @@ class LoginForm extends Component {
         axios.post('http://127.0.0.1:3001/auth/login', {user})
             .then(response => {
                 sessionStorage.setItem('jwt', response.headers.authorization)
+
+                // dispatch({
+                //   type: 'SET_CURRENT_USER',
+                //   user: response.data
+                // })
+                
                 window.location.replace("/profile")
             })
             .catch(err => {
-                // alert(err.response.data)
-                alert(err)
-                window.location.replace("/login")
+                alert(err.response.data)
+                // alert(err)
+                // window.location.replace("/login")
             })
+
         event.preventDefault()
     }
 

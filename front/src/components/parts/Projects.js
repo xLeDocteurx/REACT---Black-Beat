@@ -1,5 +1,9 @@
 import React, { Component } from "react"
-import { Header, Segment, List, Image, Grid, Card, Feed, Dimmer, Loader, Icon } from 'semantic-ui-react'
+import { 
+    // Header,
+    Segment, List,
+    // Image, Grid, Card, Feed, 
+    Dimmer, Loader, Icon } from 'semantic-ui-react'
 import axios from 'axios'
 // import checkToken from './checkToken.js'
 
@@ -100,7 +104,7 @@ export default class Projects extends Component {
                                         {/* <Image avatar src='/images/avatar/small/helen.jpg' /> */}
                                         <Icon name="file"/>
                                         <List.Content>
-                                            {this.state.user.currentProjectId == project.id ? (
+                                            {this.state.user.currentProjectId === project.id ? (
                                                 <span>{project.name}
                                                 <div className="ui left pointing label">
                                                     Current project
@@ -130,7 +134,7 @@ export default class Projects extends Component {
                                         {/* <Image avatar src='/images/avatar/small/helen.jpg' /> */}
                                         <Icon name="file"/>
                                         <List.Content>
-                                            {this.state.user.currentProjectId == project.id ? (
+                                            {this.state.user.currentProjectId === project.id ? (
                                                 <span>{project.name}
                                                 <div className="ui left pointing label">
                                                     Current project

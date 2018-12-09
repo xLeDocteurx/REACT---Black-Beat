@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 // import Redux from 'redux'
 // import { createStore } from 'redux'
 // import { Provider } from 'react-redux'
-import { connect } from 'react-redux'
+
+// import { connect } from 'react-redux'
+
 // import store from './redux/store'
 import { Route } from "react-router"
 
@@ -59,7 +61,7 @@ class App extends Component {
         <div>{this.props.store.getState()}</div> */}
         {this.state.isLoggedIn ? ( <Header/> ) : ( <HeaderVisitor/> )}
 
-        {/* <Route path="/" component={Welcome} /> */}
+        <Route path="/" exact component={Welcome} />
         <Route path="/welcome" component={Welcome} />
         <Route path="/register" component={RegisterForm} />
         <Route path="/login" component={LoginForm} />

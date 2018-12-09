@@ -30,7 +30,8 @@ router.post('/login', (req, res) => {
         }
     })
         .then((users) => {
-            if (!users[0]) {res.status(400).send(`
+            console.log('0')
+            if (!users[0]) {console.log('LOOOL');return res.status(400).send(`
                 THIS USER DOES NOT EXIST
             `)}
 
@@ -38,6 +39,7 @@ router.post('/login', (req, res) => {
             bcrypt.compare(req_password, hashed_password)
                 .then(response => {
                     if(response) {
+                        console.log('3')
                         jwt.sign({ email: users[0].email }, serverConfig.jwt.secret,
                             {
                                 // algorithm: 'RS256',
@@ -49,18 +51,23 @@ router.post('/login', (req, res) => {
                             }
                         )
                     } else {
+                        console.log('OUPS : 1')
                         res.status(400).send(`
                             WRONG PASSWORD
                         `)
                     }
                 })
                 .catch((e) => {
+                    console.log('OUPS : 2')
                     res.status(400).send(e)
                 })
         })
-        .catch((e) => {
-            res.status(400).send(e)
-        })
+        // .catch((e) => {
+        //     console.log('OUPS : 3')
+        //     res.status(400).send(`
+        //         THIS USER DOES NOT EXIST
+        //     `)
+        // })
         
 })
 

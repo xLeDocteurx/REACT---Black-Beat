@@ -1,6 +1,10 @@
 import React, { Component } from "react"
-import { Segment, Grid, Card, Feed, Dimmer, Loader, Icon } from 'semantic-ui-react'
-import axios from 'axios'
+import { Segment,
+    // Grid, Card, Feed,
+    Dimmer, Loader,
+    // Icon
+} from 'semantic-ui-react'
+// import axios from 'axios'
 // import checkToken from './checkToken.js'
 
 import '../../pages/Profile.css'
